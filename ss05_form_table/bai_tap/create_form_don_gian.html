@@ -5,35 +5,53 @@
     <title>Demo Form đơn giản</title>
 </head>
 <body>
-<form action="create_form_don_gian.html" method="Get">
+<form  action="create_form_don_gian.html" method="Get">
     <h1 align="center">SỞ THÍCH CỦA BẠN</h1>
-    <table style="width: 50%" align="center" >
+    <table style="width: 50%;" align="center"  bgcolor=>
 
         <tr>
             <td style="text-align: right;color: blue">Họ và tên</td>
-            <td colspan="2"><input type="text" style="width: 100%" name="name"></td>
+            <td colspan="2">
+                <input type="text" style="width: 100%" name="name">
+            </td>
             <td></td>
         </tr>
         <tr>
             <td style="text-align: right;color: blue" >Email</td>
-            <td colspan="2"> <input type="text" style="width: 100%" name="email"></td>
+            <td colspan="2">
+                <input type="text" style="width: 100%" name="email">
+            </td>
             <td></td>
         </tr>
         <tr>
             <td style="color: blue; text-align: right" > Sở thích</td>
-            <td><input type="checkbox" name="so_thich"   value="Thể thao"> Thể thao</td>
-            <td><input type="checkbox" name="so_thich"> Âm nhạc</td>
-            <td><input type="checkbox" name="so_thich"> Đọc sách</td>
+            <td>
+                <input type="checkbox" name="so_thich"   value="Thể thao"> Thể thao
+            </td>
+            <td>
+                <input type="checkbox" name="so_thich"> Âm nhạc
+            </td>
+            <td>
+                <input type="checkbox" name="so_thich"> Đọc sách
+            </td>
         </tr>
         <tr>
             <td></td>
-            <td><input type="checkbox" name="so_thich"> Lướt web</td>
-            <td><input type="checkbox" name="so_thich"> Chơi game</td>
-            <td><input type="checkbox" name="so_thich"> Điện ảnh</td>
+            <td>
+                <input type="checkbox" name="so_thich"> Lướt web
+            </td>
+            <td>
+                <input type="checkbox" name="so_thich"> Chơi game
+            </td>
+            <td>
+                <input type="checkbox" name="so_thich"> Điện ảnh
+            </td>
         </tr>
         <tr>
             <td></td>
-            <td><input type="checkbox" name="so_thich"> Du lịch</td>
+            <td>
+                <input type="checkbox" name="so_thich"> Du lịch
+                </td>
             <td></td>
             <td></td>
         </tr>
@@ -42,8 +60,12 @@
 <!--
             <td> <button type="submit">Gửi thông tin</button></td>
 -->
-            <td> <input type="submit" value="Gửi thông tin"></td>
-            <td> <input type="reset" value="Nhập lại"></td>
+            <td>
+                <input type="submit" value="Gửi thông tin">
+            </td>
+            <td>
+                <input type="reset" value="Nhập lại">
+            </td>
 <!--
             <td><button type="reset">Nhập lại</button></td>
 -->
@@ -51,5 +73,95 @@
         </tr>
     </table>
 </form>
+<!--
+<h1 align="center" style="color: blue">Đăng ký học viên</h1>
+-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <form >
+        <!--<fieldset>
+            <legend>Đăng ký học viên</legend>-->
+        <table border="0" align="center" width="40%" bgcolor= #7fff00>
+
+            <tr bgcolor="blue">
+                <td colspan="2" ALIGN="CENTER">ĐĂNG KÝ HỌC VIÊN</td>
+
+            </tr>
+            <tr>
+                <td align="center">Họ và tên : </td>
+                <td >
+                    <input type="text" style="width: 80%" name="name" >
+                </td>
+            </tr>
+            <tr>
+                <td align="center">Ngày sinh :</td>
+                <td >
+                    <input type="text" style="width: 60%"  name="date" >
+                </td>
+            </tr>
+            <tr>
+                <td align="center">Giới tính: </td>
+                <td >
+                    <input type="radio" name="gender" >Nam
+                    <input type="radio" name="gender"  >Nữ
+                </td>
+            </tr>
+            <tr>
+                <td align="center">Địa chỉ</td>
+                <td  >
+                    <textarea style="width: 98%" name="place"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">Lớp:</td>
+                <td  >
+                    <select ><!--chọn lớp-->
+                        <option value="" selected disabled hidden >--chọn lớp--</option>
+                        <option value="1" name="class">1</option>
+                        <option value="2" name="class">2</option>
+                        <option value="3" name="class">3</option>
+                        <option value="4" name="class">4</option>
+                        <option value="5" name="class">5</option>
+                        <option value="6" name="class">6</option>
+                        <option value="7" name="class">7</option>
+                        <option value="8" name="class">8</option>
+                        <option value="9" name="class">9</option>
+                        <option value="10" name="class">10</option>
+                        <option value="11" name="class">11</option>
+                        <option value="12" name="class">12</option>
+
+                    </select>
+
+                </td>
+            </tr>
+            <tr>
+                <td align="center">Email:</td>
+                <td  >
+                    <input type="email" name="mail" style="width: 65%">
+                </td>
+            </tr>
+            <tr>
+                <td align="center">Điện thoại:</td>
+                <td  >
+                    <input type="text" name="phone" style="width: 65%">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <input type="submit" value="Đăng ký" style="width: 70%">
+                </td>
+                <td>
+                    <input type="reset" value="Nhập lại" style="width: 70%">
+                </td>
+            </tr>
+
+        </table>
+       <!-- </fieldset>-->
+    </form>
+
 </body>
 </html>
