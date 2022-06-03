@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành hiển thị dầu ra</title>
+</head>
+<body>
+<div id="messageDiv"></div>
+<button type="button1" onclick="showMessage_alert();">alert</button>
+<button type="button2" onclick="showMessage_innerHTML();">innerHTML</button>
+<button type="button3" onclick="showMessage_write();">document.write()</button>
+<button type="button4" onclick="showMessage_console();">console</button>
+<script>
+    function showMessage_alert(){
+        alert('Xin chào!');
+    }
+    function showMessage_innerHTML(){
+        document.getElementById('messageDiv').innerHTML = 'Xin chào!';
+    }
+    function showMessage_write(){
+        document.write('Xin chào!');
+    }
+    function showMessage_console(){
+        console.log('Xin chào!');
+    }
+</script>
+</body>
+</html>
