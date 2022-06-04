@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td colspan="2"><input name="a" type="number" id="1"></td>
+        <td colspan="2"><input name="b" type="number" id="2"></td>
+    </tr>
+    <tr>
+        <td><button onclick="sum()">+</button></td>
+        <td><button onclick="tru()">-</button></td>
+        <td><button onclick="nhan()">x</button></td>
+        <td><button onclick="chia()">/</button></td>
+    </tr>
+    <tr>
+        <td colspan="2"><label>Result: </label></td>
+        <td colspan="2"><span id="result"></span></td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+<script>
+
+    function sum() {
+        let a = document.getElementById(1).value;
+        let b = document.getElementById(2).value;
+        let t = parseFloat(a)+parseFloat(b);
+        document.getElementById("result").innerText = t;
+
+    }
+    function tru() {
+            let a = document.getElementById(1).value;
+            let b = document.getElementById(2).value;
+            let h = parseFloat(a)-parseFloat(b);
+            document.getElementById("result").innerText = h;
+
+        }
+    function nhan() {
+            let a = document.getElementById(1).value;
+            let b = document.getElementById(2).value;
+            let t = parseFloat(a)*parseFloat(b);
+            document.getElementById("result").innerText = t;
+
+        }
+    function chia() {
+            let a = document.getElementById(1).value;
+            let b = document.getElementById(2).value;
+            let t = parseFloat(a)/parseFloat(b);
+            document.getElementById("result").innerText = t;
+
+        }
+
+</script>
+</body>
+</html>
