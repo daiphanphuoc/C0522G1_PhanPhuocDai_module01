@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chỉ số cân nặng cửa cơ thể</title>
+</head>
+<body>
+<script>
+    let can_nang=prompt("nhập vào cân nặng:");
+    let chieu_cao=prompt("nhập vào chiều cao:");
+    //alert(parseFloat(chieu_cao));
+    let BMI=parseFloat(can_nang)/(parseFloat(chieu_cao)*parseFloat(chieu_cao));
+
+    if (BMI < 18.5)
+        document.write(BMI+" Underweight");
+    else if (BMI < 25.0)
+        document.write(BMI+" Normal");
+    else if (BMI < 30.0)
+        document.write(BMI+" Overweight");
+    else
+        document.write(BMI+" Obese");
+
+
+</script>
+</body>
+</html>
