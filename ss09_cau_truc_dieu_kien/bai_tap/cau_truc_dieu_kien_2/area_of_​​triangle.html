@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích hình tam giác vuông</title>
+</head>
+<body>
+<label>Nhập vào cạnh vuông 1 hình tam giác: </label>
+<input type="number" id="canhVuong1"><br>
+<label>Nhập vào cạnh vuông 2 hình tam giác: </label>
+<input type="number" id="canhVuong2"><br>
+<input type="button" id="dienTich" onclick="dienTich();" value="Tính">
+<p id="show"></p>
+<script>
+    function dienTich() {
+        let canhVuong1 = document.getElementById("canhVuong1").value;
+        let canhVuong2 = document.getElementById("canhVuong2").value;
+        let area=0;
+        if (canhVuong1>0&&canhVuong2>0){
+            area=parseFloat(canhVuong1)*parseFloat(canhVuong2)/2;
+            document.getElementById("show").innerText="Diện tích hình tam giác vuông có cạnh vuông 1 là: " +canhVuong1+ " và cạnh vuông 2 là: " + canhVuong2 +" là: " + area;
+        }
+        else{
+            document.getElementById("show").innerText="Nhập sai";
+        }
+    }
+    </script>
+</body>
+</html>

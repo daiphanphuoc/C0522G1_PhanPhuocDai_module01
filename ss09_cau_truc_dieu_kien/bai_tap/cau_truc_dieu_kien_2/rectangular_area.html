@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích hình chữ nhật</title>
+</head>
+<body>
+<label>Nhập vào cạnh dài hình chữ nhật: </label>
+<input type="number" id="canhDai"><br>
+<label>Nhập vào cạnh rộng hình chữ nhật: </label>
+<input type="number" id="canhRong"><br>
+<input type="button" id="dienTich" onclick="dienTich();" value="Tính">
+<p id="show"></p>
+<script>
+    function dienTich() {
+        let canhDai = document.getElementById("canhDai").value;
+        let canhRong = document.getElementById("canhRong").value;
+        let area=0;
+        if (canhRong>0&&canhDai>0){
+            area=parseFloat(canhDai)*parseFloat(canhRong);
+            document.getElementById("show").innerText="Diện tích hình chữ nhật cạnh dài" +canhDai+ " và cạnh rộng " + canhRong +" là: " + area;
+        }
+        else{
+            document.getElementById("show").innerText="Nhập sai";
+        }
+    }
+</script>
+</body>
+</html>

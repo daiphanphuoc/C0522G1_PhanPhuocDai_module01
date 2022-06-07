@@ -21,21 +21,21 @@
         let cuocDienThoai=0;
         if(noiMang>0){
             if(noiMang<=30)
-                cuocDienThoai=noiMang*1400;
+                cuocDienThoai+=noiMang*1400;
             else
-                cuocDienThoai=30*1400+(noiMang-30)*1500;
+                cuocDienThoai+=30*1400+(noiMang-30)*1500;
         }
         if(ngoaiMang>0){
             if(ngoaiMang<=30)
-                cuocDienThoai=ngoaiMang*2400;
+                cuocDienThoai+=ngoaiMang*2400;
             else
-                cuocDienThoai=30*2400+(ngoaiMang-30)*3000;
+                cuocDienThoai+=30*2400+(ngoaiMang-30)*3000;
         }
         if(quocTe>0){
             if(quocTe<=30)
-                cuocDienThoai=quocTe*5400;
+                cuocDienThoai+=quocTe*5400;
             else
-                cuocDienThoai=30*5400+(quocTe-30)*7000;
+                cuocDienThoai+=30*5400+(quocTe-30)*7000;
         }
         alert("Cước điện thoại của hộ: " + cuocDienThoai);
     }

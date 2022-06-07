@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra tam giác</title>
+</head>
+<body>
+<label>nhập vào cạnh a:</label>
+<input type="number" id="canhA"><br>
+<label>nhập vào cạnh b:</label>
+<input type="number" id="canhB"><br>
+<label>nhập vào cạnh c:</label>
+<input type="number" id="canhC"><br>
+<input type="button" id="kiemTra" onclick="kiemTra()" value="Kiểm tra">
+<p id="tamGiac"></p>
+<script>
+    function kiemTra() {
+        let canhA=parseFloat(document.getElementById("canhA").value);
+        let canhB=parseFloat(document.getElementById("canhB").value);
+        let canhC=parseFloat(document.getElementById("canhC").value);
+        if(canhA>0 && canhB>0 && canhC>0){
+            if(canhA+canhB>canhC  && canhC+canhB>canhA && canhA+canhC>canhB){
+                document.getElementById("tamGiac").innerText="là tam giác";
+            }
+            else{
+                document.getElementById("tamGiac").innerText=" không là tam giác";
+            }
+        }
+        else{
+            document.getElementById("tamGiac").innerText=" không là tam giác";
+
+        }
+    }
+
+</script>
+</body>
+</html>

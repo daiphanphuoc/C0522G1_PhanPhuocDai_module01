@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi nhiệt độ</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th >Temperature</th>
+        <th>From</th>
+        <th>To</th>
+    </tr>
+    <tr>
+        <td ><input id="inputTemperature" type="number"></td>
+        <td>
+            <select id="from">
+                <option value="C">C</option>
+                <option value="F">F</option>
+            </select>
+        </td>
+        <td>
+            <select id="to">
+                <option value="C">C</option>
+                <option value="F">F</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="changeTemperature()">Convert</button>
+        </td>
+        <br>
+
+    </tr>
+
+</table>
+<span id ="show"></span>
+<script>
+    function changeTemperature(){
+        let inputTemperature = document.getElementById("inputTemperature").value;
+        let outputTemperature;
+         let from = document.getElementById("from").value;
+         let to= document.getElementById("to").value;
+         if (from!=to){
+             if(from=="C"){
+                 outputTemperature=(parseFloat(inputTemperature)*9/5)+32;
+             }
+             else{
+                 outputTemperature=(parseFloat(inputTemperature)-32)/1.8;
+             }
+         }
+         else{
+             outputTemperature=inputTemperature;
+         }
+        document.getElementById("show").innerText=outputTemperature;
+    }
+    /*let celsius=prompt("nhập  nhiệt độ Celsius:");
+   // alert(celsius);
+    let fahrenheit=(parseFloat(celsius)*9/5)+32;
+    alert(  celsius+ " độ C"+  " = " + fahrenheit + " độ F"  );*/
+</script>
+</body>
+</html>

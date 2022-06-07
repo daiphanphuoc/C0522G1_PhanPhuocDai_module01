@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích hình vuông</title>
+</head>
+<body>
+<label>Nhập vào cạnh hình vuông: </label>
+<input type="number" id="canh"><br>
+<input type="button" id="dienTich" onclick="dienTich();" value="Tính">
+<p id="show"></p>
+<script>
+    function dienTich() {
+        let canh = document.getElementById("canh").value;
+        let area=0;
+        if (canh>=0){
+            area=parseFloat(canh)*parseFloat(canh);
+            document.getElementById("show").innerText="Diện tích hình vuông cạnh " +canh+ " là: "+area;
+        }
+        else{
+            document.getElementById("show").innerText="Nhập sai";
+        }
+    }
+
+</script>
+</body>
+</html>
