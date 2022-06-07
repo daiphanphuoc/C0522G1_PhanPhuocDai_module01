@@ -6,19 +6,19 @@
 </head>
 <body>
 <script>
-    let can_nang=prompt("nhập vào cân nặng:");
-    let chieu_cao=prompt("nhập vào chiều cao:");
+    let canNang=prompt("nhập vào cân nặng:");
+    let chieuCao=prompt("nhập vào chiều cao:");
     //alert(parseFloat(chieu_cao));
-    let BMI=parseFloat(can_nang)/(parseFloat(chieu_cao)*parseFloat(chieu_cao));
+    let bodyMassIndex=parseFloat(canNang)/(parseFloat(chieuCao)*parseFloat(chieuCao));
 
-    if (BMI < 18.5)
-        document.write(BMI+" Underweight");
-    else if (BMI < 25.0)
-        document.write(BMI+" Normal");
-    else if (BMI < 30.0)
-        document.write(BMI+" Overweight");
+    if (bodyMassIndex < 18.5)
+        document.write(bodyMassIndex+" Underweight");
+    else if (bodyMassIndex < 25.0)
+        document.write(bodyMassIndex+" Normal");
+    else if (bodyMassIndex < 30.0)
+        document.write(bodyMassIndex+" Overweight");
     else
-        document.write(BMI+" Obese");
+        document.write(bodyMassIndex+" Obese");
 
 
 </script>

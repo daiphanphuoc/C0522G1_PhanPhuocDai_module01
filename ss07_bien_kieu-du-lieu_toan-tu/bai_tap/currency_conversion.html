@@ -37,19 +37,19 @@
 <script>
     function thanhTien() {
 
-        let soTien = document.getElementById('inputTien').value;
-        let kq = soTien;
-        let tien1 = document.getElementById('from1').value;
-        var tien2 = document.getElementById('from2').value;
-        if (tien1 !== tien2){
-            if (tien1 === "VND"){
-                kq = soTien / 23000;
+        let money = document.getElementById('inputTien').value;
+        let result = money;
+        let money1 = document.getElementById('from1').value;
+        let money2 = document.getElementById('from2').value;
+        if (money1 !== money2){
+            if (money1 === "VND"){
+                result = money / 23000;
             }
-            if(tien1 === "USD"){
-                kq = soTien * 23000;
+            if(money1 === "USD"){
+                result = money * 23000;
             }
         }
-        document.getElementById('show').innerHTML = soTien+' '+ tien1 +' = '+ kq + ' '+ tien2 ;
+        document.getElementById('show').innerHTML = money+' '+ money1 +' = '+ result + ' '+ money2 ;
     }
 
 </script>

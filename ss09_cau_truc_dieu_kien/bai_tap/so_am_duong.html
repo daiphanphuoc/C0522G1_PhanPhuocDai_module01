@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số âm dương</title>
+</head>
+<body>
+<label>Nhập vào một số bất kỳ:</label>
+<input type="number" id="so" >
+<input type="button"  id="btn_kt" value="Kiểm tra" onclick="kiem_tra()">
+
+
+<script>
+    function kiem_tra() {
+        let number=+document.getElementById("so").value;
+        if(number>0)
+            alert(number + " lớn hơn 0");
+        else if(number<0)
+            alert(number + " lớn hơn 0");
+        else
+            alert(" bằng 0");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính hoa hồng theo doanh số</title>
+</head>
+<body>
+<label>Nhập vào doanh số bán hàng:</label>
+<input type="number" min="1000000" id="doanh_so">
+<input type="button" onclick="tinh_hoa_hong()" value="tính">
+
+<script>
+    function tinh_hoa_hong() {
+        let sales = +document.getElementById("doanh_so").value;
+        //alert(ds);
+        let rose;
+        if (sales < 1000000) {
+            rose = 0;
+        } else if (sales < 10000000) {
+            rose = sales * 5 / 100;
+        } else if (sales < 100000000) {
+            rose = sales * 6 / 100;
+
+        } else {
+            rose = sales * 7 / 100;
+        }
+        alert("Hoa hồng :" + rose);
+    }
+
+</script>
+</body>
+</html>

@@ -14,10 +14,17 @@
             <td colspan="4"><input type="text" id="view" style="text-align: right; width: 250px" disabled></td>
         </tr>
         <tr>
-            <td><button style="width: 50px; height: 50px" type="button" name="btn_number" value ="1" onclick="inputValue(this.value)">  1  </button></td>
-            <td><button style="width: 50px; height: 50px" type="button" name="btn_number" value ="2" onclick="inputValue(this.value)">  2  </button></td>
-            <td><button style="width: 50px; height: 50px" type="button" name="btn_number" value ="3"  onclick="inputValue(this.value)">  3  </button></td>
-            <td><button style="width: 50px; height: 50px" type="button" name="btn_phep_tinh" value ="+"onclick="inputValue(this.value)">  +  </button></td>
+            <td><button style="width: 50px; height: 50px" type="button" name="btn_C" value ="C" onclick="xoa()">  C  </button></td>
+            <td><button style="width: 50px; height: 50px" type="button" name="btn_ngoac_don" value ="()" >  ()  </button></td>
+            <td><button style="width: 50px; height: 50px" type="button" name="btn_phan_tram" value ="%"  onclick="inputValue(this.value)">  %  </button></td>
+            <td><button style="width: 50px; height: 50px" type="button" name="btn_phep_tinh" value ="/"onclick="inputValue(this.value)">  :  </button></td>
+
+        </tr>
+        <tr>
+            <td><button style="width: 50px; height: 50px" type="button" name="btn_number" value ="7" onclick="inputValue(this.value)">  7  </button></td>
+            <td><button style="width: 50px; height: 50px" type="button" name="btn_number" value ="8" onclick="inputValue(this.value)">  8  </button></td>
+            <td><button style="width: 50px; height: 50px" type="button" name="btn_number" value ="9"  onclick="inputValue(this.value)">  9  </button></td>
+            <td><button style="width: 50px; height: 50px" type="button" name="btn_phep_tinh" value ="*"onclick="inputValue(this.value)">  x  </button></td>
         </tr>
         <tr>
             <td><button style="width: 50px; height: 50px" type="button" name="btn_number" value ="4" onclick="inputValue(this.value)">  4  </button></td>
@@ -26,16 +33,16 @@
             <td><button style="width: 50px; height: 50px" type="button" name="btn_phep_tinh" value ="-" onclick="inputValue(this.value)">  -  </button></td>
         </tr>
         <tr>
-            <td><button style="width: 50px; height: 50px" type="button" name="btn_number" value ="7" onclick="inputValue(this.value)">  7  </button></td>
-            <td><button style="width: 50px; height: 50px" type="button" name="btn_number" value ="8" onclick="inputValue(this.value)">  8  </button></td>
-            <td><button style="width: 50px; height: 50px" type="button" name="btn_number" value ="9" onclick="inputValue(this.value)">  9  </button></td>
-            <td><button style="width: 50px; height: 50px" type="button" name="btn_phep_tinh" value ="*" onclick="inputValue(this.value)">   *   </button></td>
+            <td><button style="width: 50px; height: 50px" type="button" name="btn_number" value ="1" onclick="inputValue(this.value)">  1  </button></td>
+            <td><button style="width: 50px; height: 50px" type="button" name="btn_number" value ="2" onclick="inputValue(this.value)">  2  </button></td>
+            <td><button style="width: 50px; height: 50px" type="button" name="btn_number" value ="3" onclick="inputValue(this.value)">  3  </button></td>
+            <td><button style="width: 50px; height: 50px" type="button" name="btn_phep_tinh" value ="+" onclick="inputValue(this.value)">   +   </button></td>
         </tr>
         <tr>
-            <td><button style="width: 50px; height: 50px" type="button" onclick="xoa();">  C  </button></td>
+            <td><button style="width: 50px; height: 50px" type="button" >  +/-  </button></td>
             <td><button style="width: 50px; height: 50px" type="button" name="btn_number" onclick="inputValue(this.value)">  0  </button></td>
-            <td><button style="width: 50px; height: 50px"  name= "reusult" onclick="result();">  =  </button></td>
-            <td><button style="width: 50px; height: 50px" type="button" name="btn_phep_tinh" value ="/" onclick="inputValue(this.value)">  /  </button></td>
+            <td><button style="width: 50px; height: 50px"  name= "thapPhan" onclick="inputValue(this.value);">  .  </button></td>
+            <td><button style="width: 50px; height: 50px" type="button" name="reusult" value ="=" onclick="result();">  =  </button></td>
         </tr>
     </table>
 <!--</div>-->

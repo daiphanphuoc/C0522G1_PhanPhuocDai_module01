@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính cước điện thoại</title>
+</head>
+<body>
+<label>Nhập vào số phút gọi nội mạng:</label>
+<input type="number" id="noi_mang"><br>
+<label>Nhập vào số phút gọi ngoại mạng:</label>
+<input type="number" id="ngoai_mang"><br>
+<label>Nhập vào số phút gọi quốc tế:</label>
+<input type="number" id="quoc_te"><br>
+<input type="button" id="btn_tinh" value="tính" onclick="tinh_cuoc()">
+
+<script>
+    function tinh_cuoc(){
+        let noiMang=+document.getElementById("noi_mang").value;
+        let ngoaiMang=+document.getElementById("ngoai_mang").value;
+        let quocTe=+document.getElementById("quoc_te").value;
+        let cuocDienThoai=0;
+        if(noiMang>0){
+            if(noiMang<=30)
+                cuocDienThoai=noiMang*1400;
+            else
+                cuocDienThoai=30*1400+(noiMang-30)*1500;
+        }
+        if(ngoaiMang>0){
+            if(ngoaiMang<=30)
+                cuocDienThoai=ngoaiMang*2400;
+            else
+                cuocDienThoai=30*2400+(ngoaiMang-30)*3000;
+        }
+        if(quocTe>0){
+            if(quocTe<=30)
+                cuocDienThoai=quocTe*5400;
+            else
+                cuocDienThoai=30*5400+(quocTe-30)*7000;
+        }
+        alert("Cước điện thoại của hộ: " + cuocDienThoai);
+    }
+
+</script>
+</body>
+</html>

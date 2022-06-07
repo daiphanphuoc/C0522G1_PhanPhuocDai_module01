@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số lớn nhất</title>
+</head>
+<body>
+    <label>Nhập vào một số bất kỳ:</label>
+    <input type="number" id="so1" >
+    <input type="number" id="so2" >
+    <input type="number" id="so3" >
+    <input type="button"  id="btn_kt" value="Kiểm tra" onclick="max_3_so()">
+
+
+<script>
+
+    function max_3_so() {
+        let number1=+document.getElementById("so1").value;
+        let number2=+document.getElementById("so2").value;
+        let number3=+document.getElementById("so3").value;
+        let max=number1;
+        if(max<number2)
+            max=number2;
+        if(max<number3)
+            max=number3;
+        alert(max+" là số lớn nhất");
+    }
+</script>
+</body>
+</html>

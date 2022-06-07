@@ -7,8 +7,8 @@
 <body>
 <table>
     <tr>
-        <td colspan="2"><input name="a" type="number" id="1"></td>
-        <td colspan="2"><input name="b" type="number" id="2"></td>
+        <td colspan="2"><input name="soA" type="number" id="so1"></td>
+        <td colspan="2"><input name="soB" type="number" id="so2"></td>
     </tr>
     <tr>
         <td><button onclick="sum()">+</button></td>
@@ -31,31 +31,31 @@
 <script>
 
     function sum() {
-        let a = document.getElementById(1).value;
-        let b = document.getElementById(2).value;
-        let t = parseFloat(a)+parseFloat(b);
-        document.getElementById("result").innerText = t;
+        let soA = document.getElementById(so1).value;
+        let soB = document.getElementById(so2).value;
+        let total = parseFloat(soA)+parseFloat(soB);
+        document.getElementById("result").innerText = total;
 
     }
     function tru() {
-            let a = document.getElementById(1).value;
-            let b = document.getElementById(2).value;
-            let h = parseFloat(a)-parseFloat(b);
-            document.getElementById("result").innerText = h;
+        let soA = document.getElementById(so1).value;
+        let soB = document.getElementById(so2).value;
+        let subtraction = parseFloat(soA)-parseFloat(soB);
+        document.getElementById("result").innerText = subtraction;
 
         }
     function nhan() {
-            let a = document.getElementById(1).value;
-            let b = document.getElementById(2).value;
-            let t = parseFloat(a)*parseFloat(b);
-            document.getElementById("result").innerText = t;
+        let soA = document.getElementById(so1).value;
+        let soB = document.getElementById(so2).value;
+        let multiplication = parseFloat(soA)*parseFloat(soB);
+        document.getElementById("result").innerText = multiplication;
 
         }
     function chia() {
-            let a = document.getElementById(1).value;
-            let b = document.getElementById(2).value;
-            let t = parseFloat(a)/parseFloat(b);
-            document.getElementById("result").innerText = t;
+        let soA = document.getElementById(so1).value;
+        let soB = document.getElementById(so2).value;
+        let division = parseFloat(soA)/parseFloat(soB);
+        document.getElementById("result").innerText = division;
 
         }
 

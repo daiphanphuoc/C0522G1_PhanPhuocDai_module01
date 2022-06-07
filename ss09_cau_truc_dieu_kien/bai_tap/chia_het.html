@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chia hết</title>
+</head>
+<body>
+<label>Nhập a:</label>
+<input type="number" id="a"><br>
+<label>Nhập b:</label>
+<input type="number" id="b"><br>
+<input type="button" id="btn" value="Kiểm tra chia hết" onclick="kiem_tra()">
+
+<!--
+Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho
+-->
+<script>
+    function kiem_tra() {
+        let theDividend = +document.getElementById('a').value;
+        //alert(a);
+        let divisor = +document.getElementById('b').value;
+        if (theDividend % divisor == 0)
+            alert("a chia hết cho b");
+        else
+            alert("a không chia hết cho b");
+
+    }
+
+</script>
+</body>
+</html>
