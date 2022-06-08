@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2</title>
+</head>
+<body>
+<label>Nhập  số a:</label>
+<input type="number" id="soA"><br>
+<label>Nhập  số b:</label>
+<input type="number" id="soB"><br>
+<label>Nhập  số c:</label>
+<input type="number" id="soC"><br>
+<input type="button" onclick="giaiPhuongTrinhBac2();" value="Giải phương trình">
+<p id="result"></p>
+<script>
+    function giaiPhuongTrinhBac2() {
+        let soA=parseFloat(document.getElementById("soA").value);
+        let soB=parseFloat(document.getElementById("soB").value);
+        let soC=parseFloat(document.getElementById("soC").value);
+        let nghiem;
+        if(soA==0) {
+            if (soB != 0) {
+                nghiem = "phương trình có 1 nghiệm là: " + -soC / soB;
+            } else if (soC == 0 && soB == 0) {
+                nghiem = "phương trình có vô số nghiệm";
+
+            } else {
+                nghiem = "phương trình vô nghiệm";
+            }
+        }else{
+            let delta =soB*soB-4*soA*soC;
+            if(delta<0){
+                nghiem = "phương trình vô nghiệm";
+            }else if(delta==0){
+                nghiem="Phương trình có nghiệm kép là: "+ (-soB/(2*soA));
+            }else{
+                nghiem="Phương trình có 2 nghiệm là: "+ (-soB-Math.sqrt(delta))/(2*soA) + " và " + (-soB+Math.sqrt(delta))/(2*soA);
+            }
+        }
+
+
+        document.getElementById("result").innerText=nghiem;
+    }
+</script>
+</body>
+</html>

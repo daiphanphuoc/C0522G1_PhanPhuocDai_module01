@@ -11,7 +11,7 @@ let thang_10 = "10";
 let thang_11 = "11";
 let thang_12 = "12";
 
-function check_month() {
+function checkMonth() {
     let month = document.getElementById("month").value;
     switch (month) {
         case thang_1:

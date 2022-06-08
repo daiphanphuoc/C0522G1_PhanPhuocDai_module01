@@ -7,11 +7,11 @@
 <body>
 <label>Nhập vào một số bất kỳ:</label>
 <input type="number" id="so" >
-<input type="button"  id="btn_kt" value="Kiểm tra" onclick="kiem_tra()">
+<input type="button"  id="btn_kt" value="Kiểm tra" onclick="kiemTra()">
 
 
 <script>
-    function kiem_tra() {
+    function kiemTra() {
         let number=+document.getElementById("so").value;
         if(number>0)
             alert(number + " lớn hơn 0");

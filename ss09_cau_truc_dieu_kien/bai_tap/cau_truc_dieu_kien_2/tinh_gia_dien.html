@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giá điện</title>
+</head>
+<body>
+<label>Nhập vào số chữ điện:</label>
+<input type="number" id="chuDien"><br>
+<input type="button"onclick="tinhTienDien();" value="tính">
+<p id="result"></p>
+
+<script>
+    function tinhTienDien() {
+        let tienDien =0;
+        let chuDien=parseInt(document.getElementById("chuDien").value);
+        if(chuDien<0){
+            alert("nhập sai");
+        }else if(chuDien<=100){
+            tienDien=chuDien*1500;
+        }else if(chuDien<=200){
+            tienDien=1500*100+(chuDien-100)*1700;
+        }else if(chu<=350){
+            tienDien=1500*100+100*1700+(chuDien-200)*2000;
+        }else{
+            tienDien=1500*100+100*1700+150*2000+(chuDien-350)*2500;
+        }
+        document.getElementById("result").innerText=tienDien;
+    }
+</script>
+</body>
+</html>

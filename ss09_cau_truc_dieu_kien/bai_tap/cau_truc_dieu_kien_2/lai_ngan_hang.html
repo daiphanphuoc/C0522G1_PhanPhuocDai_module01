@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi ngân hàng</title>
+</head>
+<body>
+<!--Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.-->
+<label>Nhập  số tiền vay:</label>
+<input type="number" id="initiaLoanAmount"><br>
+<label>Nhập  số tháng:</label>
+<input type="number" id="month"><br>
+<label>Nhập  lãi suất hàng tháng:</label>
+<input type="number" id="interestRate"> <label>%</label><br>
+<input type="button" onclick="tinhLaiNganHang();" value="Tính">
+<p id="result"></p>
+
+
+<script>
+    function tinhLaiNganHang() {
+        let initiaLoanAmount =parseFloat(document.getElementById("initiaLoanAmount").value);
+        let month =parseInt(document.getElementById("month").value);
+        let interestRate =parseFloat(document.getElementById("interestRate").value);
+        let result=0;
+        let initiaLoanAmount2=initiaLoanAmount;
+        if(initiaLoanAmount>0 && month>0 && interestRate>0){
+            /*for( let i=1;i<=month;i++){
+                result=result+initiaLoanAmount2*interestRate/100;
+                initiaLoanAmount2=initiaLoanAmount2+result;
+            }*/
+            initiaLoanAmount2=initiaLoanAmount* Math.pow((1+interestRate/100),month);
+            result=initiaLoanAmount2-initiaLoanAmount;
+        }
+        document.getElementById("result").innerText=result;
+    }
+</script>
+</body>
+</html>

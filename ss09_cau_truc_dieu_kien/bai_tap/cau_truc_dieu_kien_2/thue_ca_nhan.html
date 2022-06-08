@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thuế thu nhập cá nhân</title>
+</head>
+<body>
+<label>Nhập vào thu nhập  cá nhân:</label>
+<input type="number" id="thuNhap"><br>
+<input type="button"onclick="tinhThue();" value="tính">
+<p id="result"></p>
+
+
+<script>
+    function tinhThue() {
+        let thuNhap=parseFloat(document.getElementById("thuNhap").value);
+        let tienThue =0;
+        if(thuNhap<10000000){
+            tienThue=0;
+        } else if(thuNhap<30000000){
+            tienThue=(thuNhap-10000000)*10/100;
+        }else {
+            tienThue=(thuNhap-10000000)*20/100;
+        }
+         document.getElementById("result").innerText=tienThue;
+
+    }
+</script>
+</body>
+</html>

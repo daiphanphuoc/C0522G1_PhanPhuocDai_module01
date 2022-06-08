@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 1</title>
+</head>
+<body>
+<!--ax+b=0-->
+<label>Nhập  số a:</label>
+<input type="number" id="soA"><br>
+<label>Nhập  số b:</label>
+<input type="number" id="soB"><br>
+<input type="button" onclick="giaiPhuongTrinhBac1();" value="Giải phương trình">
+<p id="result"></p>
+<script>
+    function giaiPhuongTrinhBac1() {
+        let soA=parseFloat(document.getElementById("soA").value);
+        let soB=parseFloat(document.getElementById("soB").value);
+        let nghiem;
+        if(soA!=0){
+            nghiem="phương trình có 1 nghiệm là: "+-soB/soA;
+        }else if(soA==0 && soB==0){
+            nghiem="phương trình có vô số nghiệm";
+
+        }else{
+            nghiem="phương trình vô nghiệm";
+        }
+        document.getElementById("result").innerText=nghiem;
+    }
+</script>
+
+</body>
+</html>
