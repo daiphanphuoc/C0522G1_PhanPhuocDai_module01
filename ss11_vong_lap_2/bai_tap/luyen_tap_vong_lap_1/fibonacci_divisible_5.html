@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số Fibonacci chia hết cho 5</title>
+</head>
+<body>
+<script>
+    let fibo1=1;
+    let fibo2=1;
+    let fibo=1;
+    while (fibo%5!=0){
+        fibo=fibo1+fibo2;
+        fibo1=fibo2;
+        fibo2=fibo;
+    }
+    alert("số fibonacci đầu tiên chia hết cho 5 là: " +fibo);
+</script>
+</body>
+</html>

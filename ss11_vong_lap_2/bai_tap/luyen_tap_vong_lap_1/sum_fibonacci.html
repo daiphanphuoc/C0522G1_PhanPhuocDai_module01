@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng các số đầu tiên trong dãy fibonacci</title>
+</head>
+<body>
+    <script>
+        let fibo1=0;
+        let fibo2=1;
+        let fibo=1;
+        let soLuong;
+        do{
+            soLuong=parseInt(prompt("nhập vào số các số Fibonacci: "))
+
+        }while (soLuong<3);
+        let sum=0;
+        let dem=1;
+        while (dem<=soLuong){
+            sum=sum+fibo;
+            fibo=fibo1+fibo2;
+            fibo1=fibo2;
+            fibo2=fibo;
+            dem++;
+        }
+        alert(sum);
+    </script>
+</body>
+</html>

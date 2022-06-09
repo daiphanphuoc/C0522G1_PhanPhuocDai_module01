@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng các số tự nhiên chi hết cho 7</title>
+</head>
+<body>
+    <script>
+        let total=0;
+        let naturalNumber=0;
+        let  soLuong;
+        do{
+            soLuong=parseInt(prompt("nhập vào số lượng số tự nhiên chia hết cho 7 cần cộng:"));
+        }while (soLuong<1);
+        let count=1;
+        do{
+            while (naturalNumber%7!=0){
+                naturalNumber++;
+            }
+            total=total+naturalNumber;
+            naturalNumber++;
+            count++;
+        }while (count<=soLuong);
+        /*do{
+            total=total+naturalNumber;
+            naturalNumber=naturalNumber+7;
+            count++;
+        }while (count<=soLuong);*/
+
+        alert(total);
+    </script>
+</body>
+</html>
