@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In hình chữ nhật</title>
+</head>
+<body>
+<script>
+    let height =parseInt(prompt("chiều dài hình chữ nhật:"));
+    let wight=parseInt(prompt("chiều rộng hình chữ nhật:"));
+    let result="";
+    let j;
+    for(let i=1;i<=height;i++){
+        for (j=1;j<=wight;j++){
+            if(i==1 || j==1 || i==height || j==wight){
+                result=result +"*";
+            }else{
+                //result=result +"  ";
+                result=result +"&nbsp;&nbsp;";
+                //result=result +"&ensp;";
+            }
+        }
+        result=result+"<br>"
+    }
+    document.write(result+"<br>")
+
+</script>
+</body>
+</html>    

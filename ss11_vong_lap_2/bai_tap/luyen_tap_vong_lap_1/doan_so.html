@@ -5,11 +5,28 @@
     <title>Đoán số</title>
 </head>
 <body>
-<button onclick="run()">Chơi đóan số</button>
+<button onclick="run()">Chơi đoán số</button>
     <script>
         function run() {
-
-
+            let min=parseInt(prompt("Số bạn muốn đoán trong khoảng  từ"));
+            let max=parseInt(prompt("Số bạn muốn đoán trong khoảng  đến"));
+            let i=0;
+            let rd= Math.floor(Math.random() * (max - min + 1) ) + min;
+            while (i<3){
+                let number=parseInt(prompt("Số bạn  đoán: "));
+                if (number===rd){
+                    alert("Bạn đoán đúng");
+                    break;
+                }else if(number>rd) {
+                    alert("Số bạn đoán lớn hơn");
+                }else{
+                    alert("Số bạn đoán nhỏ hơn");
+                }
+                i++;
+            }
+            if(i==3){
+                alert("Bạn hết lượt đoán");
+            }
         }
     </script>
 </body>

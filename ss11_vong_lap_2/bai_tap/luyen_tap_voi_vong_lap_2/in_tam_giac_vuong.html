@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In tam giác vuông</title>
+</head>
+<body>
+<script>
+    let height = parseInt(prompt("nhập vào cạnh vuông của tam giác:"));
+    let i;
+    let j;
+    let result = "";
+    //let chonGoc = Math.floor(Math.random() * 3);
+    let chonGoc = parseInt(prompt("nhập vào các số từ 0 đến 3:"));
+    switch (chonGoc) {
+        case 0:                //góc vuông ở dưới bên trái
+            for (i = 1; i <= height; i++) {
+                for (j = 1; j <= i; j++) {
+                    result = result + "*";
+                }
+
+                result = result + "<br>";
+            }
+            //       document.write(result);
+            break;
+        case 1:               //góc vuông ở trên bên trái
+            for (i = 1; i <= height; i++) {
+                for (j = height; j >= i; j--) {
+                    result = result + "*";
+                }
+                result = result + "<br>";
+            }
+            //  document.write(result);
+            break;
+        case 2:                //góc vuông ở trên bên phải
+            for (i = 1; i <= height; i++) {
+                for (j = 1; j <= height; j++) {
+                    if (j > i - 1) {
+                        result = result + "*";
+                    } else {
+                        result = result + "&nbsp&nbsp";
+                    }
+                }
+                result = result + "<br>";
+            }
+            // document.write(result);
+            break;
+        case 3:             //góc vuông ở dưới bên phải
+            for (i = 1; i <= height; i++) {
+                for (j = 1; j <= height; j++) {
+                    if (i > height - j) {
+                        result = result + "*";
+                    } else {
+                        result = result + "&nbsp&nbsp";
+                    }
+                }
+                result = result + "<br>";
+            }
+            //   document.write(result);
+            break;
+    }
+    document.write(result+"<br>");
+</script>
+</body>
+</html>

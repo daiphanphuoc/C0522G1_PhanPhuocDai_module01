@@ -29,7 +29,7 @@
                 initiaLoanAmount2=initiaLoanAmount2+result;
             }*/
             initiaLoanAmount2=initiaLoanAmount* Math.pow((1+interestRate/100),month);
-            result=initiaLoanAmount2-initiaLoanAmount;
+            result=Math.floor(initiaLoanAmount2-initiaLoanAmount);
         }
         document.getElementById("result").innerText=result;
     }
