@@ -6,8 +6,14 @@
 </head>
 <body>
     <script>
-
-
+        let arrayNumber =Array();
+        let number=parseInt(prompt("nhập vào chiều dài của mảng số nguyên:"));
+        for(let i=0;i<number;i++){
+            arrayNumber[i]=parseInt(prompt("nhập vào phần tử thứ "+i+" của mảng:"));
+        }
+        for(let j=0;j<arrayNumber.length;j++){
+            document.write(arrayNumber[j]+"<br>");
+        }
     </script>
 </body>
 </html>
