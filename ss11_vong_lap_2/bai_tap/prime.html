@@ -9,21 +9,23 @@
 <script>
     function prime(n) {
         let i=2;
-        let count =0;
+        //let count =0;
         if(n<2){
             return false;
         }
-        while (i<n/2){
+        while (i<=n/2){
             if(n%i==0){
-                count++;
+        //        count++;
+                return false;
             }
             i++;
         }
-        if(count==0){
+        /*if(count==0){
             return true;
         }else{
             return false;
-        }
+        }*/
+        return true;
     }
     function primeNumbers() {
         let number=parseInt(prompt("nhập vào số lượng số nguyên tố cần in"));

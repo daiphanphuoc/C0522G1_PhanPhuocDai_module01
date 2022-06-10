@@ -3,69 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <title>Đăng Ký Người Dùng</title>
-    <script src="demoJavaScript.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        .container {
+            max-width: 50%;
+            border-style: solid;
+        }
 
+        .row {
+            margin: 10px;
+            padding: 3px;
+        }
+
+        .large-text {
+            font-weight: 600;
+            font-size: 25px;
+        }
+
+        input {
+            text-align: right;
+        }
+
+        button {
+            border-style: solid;
+            border-radius: 3px;
+            font-size: 20px;
+            font-weight: 300;
+            width: 90%;
+            height: 100%;
+            margin: 10px;
+        }
+    </style>
 </head>
-<style>
-    .color {
-        background-color: yellow;
-    }
-    td{
-        width: 50px;
-        height: 50px;
+<body>
+<div class="container">
+    <div class="row">
+        <input id="inputBox" type="text" class="form-control large-text" aria-label="Large">
+    </div>
+    <!-- Row 1 -->
+    <div class="row">
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="calcInput('1')">1</button>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="calcInput('2')">2</button>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="calcInput('3')">3</button>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="calcInput('+')">+</button>
+        </div>
+    </div>
+    <!-- End Row 1 -->
+
+    <!-- Row 2 -->
+    <div class="row">
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="calcInput('4')">4</button>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="calcInput('5')">5</button>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="calcInput('6')">6</button>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="calcInput('-')">-</button>
+        </div>
+    </div>
+    <!-- End Row 2 -->
+
+    <!-- Row 3 -->
+    <div class="row">
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="calcInput('7')">7</button>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="calcInput('8')">8</button>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="calcInput('9')">9</button>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="calcInput('X')">X</button>
+        </div>
+    </div>
+    <!-- End Row 3 -->
+
+    <!-- Row 4 -->
+    <div class="row">
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="calcInput('C')">C</button>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="calcInput('0')">0</button>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="calcInput('=')">=</button>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="calcInput('/')">/</button>
+        </div>
+    </div>
+    <!-- End Row 4 -->
+</div>
+<!-- End Container -->
+<script>
+    function printInput(inputStr) {
+        let inputBox = document.getElementById("inputBox");
+        inputBox.value += inputStr;
     }
 
-</style>
-<body>
-<table border="1" cellpadding="10">
-    <tr>
-        <td colspan="7"><input style="width: 100%; height: 100%" type="number"/></td>
-    </tr>
-    <tr>
-        <td class="color"><botton>Rad</botton></td>
-        <td><botton> </botton></td>
-        <td class="color"><botton>x!</botton></td>
-        <td class="color"><botton>(</botton></td>
-        <td class="color"><botton>)</botton></td>
-        <td class="color"><botton>%</botton></td>
-        <td class="color"><botton>AC</botton></td>
-    </tr>
-    <tr>
-        <td class="color"><botton>Inv</botton></td>
-        <td class="color"><botton>sin</botton></td>
-        <td class="color"><botton>ln</botton></td>
-        <td><botton>7</botton></td>
-        <td><botton>8</botton></td>
-        <td><botton>9</botton></td>
-        <td class="color"><botton>÷</botton></td>
-    </tr>
-    <tr>
-        <td class="color"><botton>π</botton></td>
-        <td class="color"><botton>cos</botton></td>
-        <td class="color"><botton>log</botton></td>
-        <td><botton>4</botton></td>
-        <td><botton>5</botton></td>
-        <td><botton>6</botton></td>
-        <td class="color"><botton>x</botton></td>
-    </tr>
-    <tr>
-        <td class="color"><botton>e</botton></td>
-        <td class="color"><botton>tan</botton></td>
-        <td class="color"><botton>√</botton></td>
-        <td><botton>1</botton></td>
-        <td><botton>2</botton></td>
-        <td><botton>3</botton></td>
-        <td class="color"><botton>-</botton></td>
-    </tr>
-    <tr>
-        <td class="color"><botton>Ans</botton></td>
-        <td class="color"><botton>EXP</botton></td>
-        <td class="color"><botton>x^y</botton></td>
-        <td><botton>0</botton></td>
-        <td><botton>.</botton></td>
-        <td style="background-color: #0048ff"><botton>=</botton></td>
-        <td class="color"><botton>+</botton></td>
-    </tr>
-</table>
+    function clearInput() {
+        document.getElementById("inputBox").value = '';
+    }
+
+    function printResult() {
+        let inputBox = document.getElementById("inputBox");
+        let mathexp = inputBox.value.replace('X', '*');
+        if (mathexp) {
+            inputBox.value = eval(mathexp);
+        }
+    }
+
+    function calcInput(inputName) {
+        switch (inputName) {
+            case 'C':
+                clearInput();
+                break;
+            case '=':
+                printResult();
+                break;
+            default:
+                printInput(inputName);
+        }
+    }
+</script>
+
 </body>
 </html>

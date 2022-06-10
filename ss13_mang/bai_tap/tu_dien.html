@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+    <script>
+
+        let eng =["license","permits","certain","uses","personal","development ","available","review "];
+        let vn=["giấy phép","giấy phép","chắc chắn","sử dụng","riêng tư","sự phát triển","có sẵn","kiểm tra lại"];
+        let str=prompt("nhập vào từ cần dich:");
+        let i=0;
+        for(;i<eng.length;i++){
+            if(str==eng[i]) {
+                alert(vn[i]);
+                break;
+            }
+        }
+        if(i==eng.length){
+            alert("không tìm thấy");
+        }
+
+    </script>
+</body>
+</html>
