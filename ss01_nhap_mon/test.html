@@ -3,144 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Đăng Ký Người Dùng</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <style>
-        .container {
-            max-width: 50%;
-            border-style: solid;
-        }
 
-        .row {
-            margin: 10px;
-            padding: 3px;
-        }
 
-        .large-text {
-            font-weight: 600;
-            font-size: 25px;
-        }
-
-        input {
-            text-align: right;
-        }
-
-        button {
-            border-style: solid;
-            border-radius: 3px;
-            font-size: 20px;
-            font-weight: 300;
-            width: 90%;
-            height: 100%;
-            margin: 10px;
-        }
-    </style>
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <input id="inputBox" type="text" class="form-control large-text" aria-label="Large">
-    </div>
-    <!-- Row 1 -->
-    <div class="row">
-        <div class="col-md-3">
-            <button class="btn btn-primary" onclick="calcInput('1')">1</button>
-        </div>
-        <div class="col-md-3">
-            <button class="btn btn-primary" onclick="calcInput('2')">2</button>
-        </div>
-        <div class="col-md-3">
-            <button class="btn btn-primary" onclick="calcInput('3')">3</button>
-        </div>
-        <div class="col-md-3">
-            <button class="btn btn-primary" onclick="calcInput('+')">+</button>
-        </div>
-    </div>
-    <!-- End Row 1 -->
-
-    <!-- Row 2 -->
-    <div class="row">
-        <div class="col-md-3">
-            <button class="btn btn-primary" onclick="calcInput('4')">4</button>
-        </div>
-        <div class="col-md-3">
-            <button class="btn btn-primary" onclick="calcInput('5')">5</button>
-        </div>
-        <div class="col-md-3">
-            <button class="btn btn-primary" onclick="calcInput('6')">6</button>
-        </div>
-        <div class="col-md-3">
-            <button class="btn btn-primary" onclick="calcInput('-')">-</button>
-        </div>
-    </div>
-    <!-- End Row 2 -->
-
-    <!-- Row 3 -->
-    <div class="row">
-        <div class="col-md-3">
-            <button class="btn btn-primary" onclick="calcInput('7')">7</button>
-        </div>
-        <div class="col-md-3">
-            <button class="btn btn-primary" onclick="calcInput('8')">8</button>
-        </div>
-        <div class="col-md-3">
-            <button class="btn btn-primary" onclick="calcInput('9')">9</button>
-        </div>
-        <div class="col-md-3">
-            <button class="btn btn-primary" onclick="calcInput('X')">X</button>
-        </div>
-    </div>
-    <!-- End Row 3 -->
-
-    <!-- Row 4 -->
-    <div class="row">
-        <div class="col-md-3">
-            <button class="btn btn-primary" onclick="calcInput('C')">C</button>
-        </div>
-        <div class="col-md-3">
-            <button class="btn btn-primary" onclick="calcInput('0')">0</button>
-        </div>
-        <div class="col-md-3">
-            <button class="btn btn-primary" onclick="calcInput('=')">=</button>
-        </div>
-        <div class="col-md-3">
-            <button class="btn btn-primary" onclick="calcInput('/')">/</button>
-        </div>
-    </div>
-    <!-- End Row 4 -->
-</div>
-<!-- End Container -->
+<button onclick="game()">PLAY!</button>
 <script>
-    function printInput(inputStr) {
-        let inputBox = document.getElementById("inputBox");
-        inputBox.value += inputStr;
-    }
+    let heart = "<table style='width: 150px'>";
+    for (let dong=0; dong<=7; dong++) {
+        heart += "<tr>";
+        for (let cot=0; cot<=8; cot++) {
+            /*if (
+                (i==1 && (j==1 || j==4 || j==7))
+                || (i==4 && (j==1 || j==7))
+                || (i==5 && (j!=3 && j!=4 && j!=5))
+                || (i==6 && j!=4)
+            ) */
+            if(dong<4){
+                if(dong+cot<2||cot-dong>6||(cot-dong>2&&cot-dong<6&&cot+dong<6)){
+                    heart += "<td>" + "</td>";
+                }else{
+                    heart += "<td>" + "*" + "</td>";
+                }
 
-    function clearInput() {
-        document.getElementById("inputBox").value = '';
-    }
+            }
+            else {
+                if(dong-cot>3|| cot+dong>11){
+                    heart += "<td>" + "</td>";
+                }else{
+                    heart += "<td>" + "*" + "</td>";
+                }
 
-    function printResult() {
-        let inputBox = document.getElementById("inputBox");
-        let mathexp = inputBox.value.replace('X', '*');
-        if (mathexp) {
-            inputBox.value = eval(mathexp);
+            }
         }
+        heart += "</tr>";
     }
-
-    function calcInput(inputName) {
-        switch (inputName) {
-            case 'C':
-                clearInput();
-                break;
-            case '=':
-                printResult();
-                break;
-            default:
-                printInput(inputName);
-        }
-    }
+    heart += "</table>";
+    document.write(heart);
 </script>
-
 </body>
 </html>

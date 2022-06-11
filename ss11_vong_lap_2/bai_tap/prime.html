@@ -37,20 +37,20 @@
     function primeNumbers_2() {
         let number = parseInt(prompt("nhập vào số lượng số nguyên tố cần in"));
         let soN = 2;
-        let i;
-        let j;
+        let i; //biến chạy số lượng số nguyên tố tìm dc
+        let j;//biến chạy dùng cho việc kiểm tra số nguyên tố
         let result = "";
-        let count;
+        let count;//biến đếm ước số
         for (i = 1; i <= number; ) {
             count=0;
-            for(j=2;j<=soN/2;j++){
+            for(j=2;j<=soN/2;j++){//vòng lặp tìm ước số của soN, để kiểm tra số nguyên tố
                 if(soN%j==0) {
-                    count++;
+                    count++;//tìm dc ước
                     break;
                 }
             }
             if(count==0){
-                i++;
+                i++;//biểu thức tăng của vòng lặp for, nó tăng với diều kiện tìm dc 1 số nguyên tố
                 result=result+ soN+", ";
             }
             soN++;
