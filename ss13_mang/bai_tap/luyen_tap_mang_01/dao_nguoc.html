@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược</title>
+</head>
+<body>
+<script>
+    let arrayNumber =new Array();
+    let length = parseInt(prompt("nhập vào số phần tử của mảng: "));
+    for (let i=0; i<length;i++){
+        arrayNumber[i]=parseInt(prompt("nhập vào  phần tử của mảng: "));
+    }
+    let fist=0;
+    let last=arrayNumber.length-1;
+    let tam;
+    while (fist<last){
+        tam =arrayNumber[fist];
+        arrayNumber[fist]=arrayNumber[last];
+        arrayNumber[last]=tam;
+        fist++;
+        last--;
+    }
+    let result="";
+    for(let i=0;i<arrayNumber.length;i++){
+        result+=arrayNumber[i]+"<br>";
+    }
+    alert(result);
+</script>
+</body>
+</html>

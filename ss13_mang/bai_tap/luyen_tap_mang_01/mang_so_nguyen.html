@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng số nguyên</title>
+</head>
+<body>
+<script>
+    let arrayNumber =new Array();
+    let length = parseInt(prompt("nhập vào số pần tử của mảng:"));
+    let max,tong=0,avg=0;
+    for(let i=0;i<length;i++){
+        arrayNumber[i]=parseInt(prompt("nhập phần tử thứ "+i+ " :"));
+    }
+    max=arrayNumber[0];
+    for(let i=0;i<arrayNumber.length;i++){
+        if(max<arrayNumber[i]){
+            max=arrayNumber[i];
+
+        }
+        tong=tong+arrayNumber[i];
+    }
+    avg=tong/arrayNumber.length;
+    document.write("giá trị lớn nhất của mảng là: "+max+ " và giá trị trung bình của mảng: "+avg);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrayNumber =[2,5,3,8,9,1,3,6,8,6,4,2,77,3,5,2];
+    let max=arrayNumber[0];
+    let chiSo=0;
+    for(let i=1;i<arrayNumber.length;i++){
+        if(max<arrayNumber[i]){
+            max=arrayNumber[i];
+            chiSo=i;
+        }
+    }
+    alert("sô lớn nhất là: "+max+ " tại vị trí: "+chiSo);
+</script>
+</body>
+</html>

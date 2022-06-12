@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Điếm số nguyên âm</title>
+</head>
+<body>
+<!--Viết chương trình đếm số nguyên âm trong một chuỗi-->
+<script>
+    let arrayNumber=new Array();
+    let length =parseInt(prompt("nhập vào chiều dài của mảng"));
+    for(let i=0;i<length;i++){
+        arrayNumber[i]=parseInt(prompt("nhập vào phần tử thứ "+ i+" của mảng"));
+
+    }
+    let count=0;
+    for (let i=0;i<arrayNumber.length;i++){
+        if(arrayNumber[i]<0){
+            count++;
+        }
+    }
+    alert(count);
+</script>
+</body>
+</html>

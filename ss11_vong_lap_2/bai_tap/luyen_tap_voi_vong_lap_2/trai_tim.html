@@ -15,8 +15,8 @@
     let cao=parseInt(prompt("nhập vào chiều cao trái tim:(>6)"));
     for (let dong=0; dong<cao; dong++) {
         heart += "<tr>";
+        //if(dong<cao/2&&dong>cao/4+1){continue;}
         for (let cot=0; cot<=cao; cot++) {
-
             if(dong<cao/2){
                 if(dong+cot<(cao/4)||cot-dong>(cao*3/4)||(cot-dong>(cao/4)&&cot-dong<(cao*3/4)&&cot+dong<(cao*3/4))){
                     heart += "<td width=\"20px\">" + "</td>";
