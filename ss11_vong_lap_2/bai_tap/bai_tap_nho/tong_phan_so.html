@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*Viết chương trình tính :
+S=1+1/2+1/3+....+1/n*/
+    let numberN;
+    do {
+        numberN=parseInt(prompt("nhập vào 1 số khác 0"));
+    }while (numberN===0);
+    let numberS=0;
+    for(let i=1;i<=numberN;i++){
+        numberS=numberS+1.0/i;
+    }
+    alert(numberS);
+</script>
+</body>
+</html>

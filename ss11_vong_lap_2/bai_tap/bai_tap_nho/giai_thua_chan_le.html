@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*Tính n!! = 1*3*5*.....*n(n lẽ)
+= 2*4*6*....*n(n chẵn)*/
+    let numberN;
+    do {
+        numberN=parseInt(prompt("nhập vào 1 số nguyên"));
+    }while (numberN<=0);
+    let giaiThua=1;
+    if(numberN%2==0){
+        for(let i=2;i<=numberN;i=i+2){
+            giaiThua=giaiThua*i;
+        }
+    }else{
+        for(let i=1;i<=numberN;i=i+2){
+            giaiThua=giaiThua*i;
+        }
+    }
+    alert(giaiThua);
+</script>
+</body>
+</html>

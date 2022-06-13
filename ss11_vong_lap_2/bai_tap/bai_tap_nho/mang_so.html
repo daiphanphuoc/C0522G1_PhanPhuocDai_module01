@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *  Viết chương trình thực hiện các công việc như sau :
+a. Nhập một mảng a gồm n phần tử kiểu nguyên int
+b. Tính tổng số dương lẻ mảng a
+c. Nhập phần tử k, tìm xem k có xuất hiện trong mảng a không. Nếu có chỉ ra phần tử ở
+vị trí đầu tiên
+d. Sắp sếp mảng a theo thứ tự tăng dần..
+e. Chèn phần tử p vào mảng a sao cho mảng a vẫn đảm bảo tăng dần và xuất lại mảng a.*/
+
+    let arrayNumber=[];
+    let numberN=parseInt(prompt("nhập vào chiều dài của mảng"));
+    for(let i=0;i<numberN;i++){
+        arrayNumber[i]=parseInt(prompt("nhập vào phần tử thứ "+i));
+
+    }
+    let tongLe=0;
+    for(let i=0;i<arrayNumber.length;i++){
+        if(arrayNumber[i]%2===1){
+            tongLe=tongLe+arrayNumber[i];
+        }
+    }
+    alert(tongLe);
+    //tìm phần tử k ở vị trí đầu tiên
+    let k=parseInt(prompt())
+</script>
+</body>
+</html>

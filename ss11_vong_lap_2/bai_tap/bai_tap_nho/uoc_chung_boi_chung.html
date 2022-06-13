@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*Nhập 2 số nguyên dương a và b. Sau đó in ra ước chung lớn nhất và bội chung nhỏ nhất
+của 2 số nguyên dương a và b đó*/
+    let numberA =parseInt(prompt("nhập vào số nguyên duong a:"));
+    let numberB =parseInt(prompt("nhập vào số nguyên duong b:"));
+    document.write("ước chung lớn nhất của "+numberA+" và "+ numberB+" là: "+uocChungLonNhat(numberA,numberB)+"<br>");
+    document.write("bội chung nhỏ nhất của "+numberA+" và "+ numberB+" là: "+ numberA*numberB/uocChungLonNhat(numberA,numberB));
+
+
+
+
+
+    function uocChungLonNhat(a,b) {
+        while (a!=b){
+            if(a>b){
+                a=a-b;
+            }else{
+                b=b-a;
+            }
+        }
+        return a;
+    }
+    function boiChungNhoNhat(a,b) {
+        return a*b/uocChungLonNhat(a,b);
+    }
+
+</script>
+</body>
+</html>

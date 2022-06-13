@@ -6,8 +6,53 @@
 </head>
 <body>
 <script>
-
+/*bài 1*/
     let  myColor = ["Red", "Green", "White", "Black"];
+    document.write(myColor.toString());
+    document.write("<br>");
+    document.write((myColor.join()));
+    document.write("<br>");
+    document.write((myColor.join("-")));
+
+
+/*bài 2*/
+    let numbers = prompt("nhập vào 1 chuỗi số");
+    let arrNumbers=numbers.toString();
+    let result=[arrNumbers[0]];
+    for(let i=1;i<arrNumbers.length;i++){
+        if(arrNumbers[i]%2===0 && arrNumbers[i-1]%2===0){
+            result.push("-",arrNumbers[i]);
+        }else {
+            result.push(arrNumbers[i]);
+        }
+    }
+    document.write(result.join(''));
+
+
+ /*Bài 3*/
+let str = prompt("nhập vào 1 chuỗi:");
+const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+let result1=new Array();
+
+for(let i=0; i<str.length; i++)
+{
+    if(UPPER.indexOf(str[i]) !== -1)
+    {
+        result1.push(str[i].toLowerCase());
+    }
+    else if(LOWER.indexOf(str[i]) !== -1)
+    {
+        result1.push(str[i].toUpperCase());
+    }
+    else
+    {
+        result1.push(str[i]);
+    }
+}
+//console.log(result1.join(''));
+document.write(result1.join(''));
+
 </script>
 </body>
 </html>

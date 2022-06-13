@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*Nhập vào tháng, năm bất kỳ. In ra số ngày tương ứng với tháng, năm đó
+    * Những năm chia hết cho 4 mà không chia hết cho 100 là năm nhuận
+        Những năm chia hết cho 100 mà không chia hết cho 400 thì KHÔNG PHẢI là năm nhuận
+            Những năm chia hết đồng thời cho 100 và 400 là năm nhuận
+    *
+    * */
+    let thang = parseInt(prompt("nhập vào tháng: "));
+    let nam = parseInt(prompt("nhập vào năm: "));
+    let nhuan = true;
+    if (nam % 4 == 0) {
+        if (nam % 100 == 0) {
+            if (nam % 400 != 0) {
+                nhuan = false;
+            }
+        }
+    } else {
+        nhuan = false;
+    }
+    switch (thang) {
+        case 2:
+            if (nhuan) {
+                alert("29 ngày");
+            } else {
+                alert("28 ngày");
+            }
+            break;
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            alert("31 ngày");
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            alert("30 ngày");
+
+    }
+</script>
+</body>
+</html>

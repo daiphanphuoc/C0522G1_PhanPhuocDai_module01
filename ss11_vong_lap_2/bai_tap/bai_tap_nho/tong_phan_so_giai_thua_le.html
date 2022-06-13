@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    * Viết chương trình tính  :
+S=1+1/3!+1/5!+.....+1/(2n-1)!
+    * */
+    let numberN;
+    do {
+        numberN=parseInt(prompt("nhập vào 1 số nguyên duong lẻ"));
+    }while (numberN<1||numberN%2===0);
+    let numberS=0;
+    for(let i=1;i<=numberN;i=i+2){
+        let giaiThua=1;
+        for(let j=1;j<=i;j++){
+            giaiThua=giaiThua*j;
+        }
+        numberS=numberS+1.0/giaiThua;
+    }
+    alert(numberS);
+</script>
+</body>
+</html>

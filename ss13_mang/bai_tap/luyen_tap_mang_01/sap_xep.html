@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.
+Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.-->
+<script>
+    function sapXep() {
+        let arrayNumber=[];
+        let length=parseInt(prompt("nhập vào chiều dài của mảng: "));
+        for(let i=0;i<length;i++){
+            arrayNumber[i]=parseInt(prompt("nhập vào phần tử thứ "+i+": "));
+        }
+        //sắp xếp
+        let max,viTri;
+        for(let j=0;j<arrayNumber.length-1;j++){
+            max =arrayNumber[j];
+             viTri=j;
+            for(let i=j+1;i<arrayNumber.length;i++){
+                if(max<arrayNumber[i]){
+                    max=arrayNumber[i];
+                    viTri=i;
+                }
+            }
+            if(viTri>j){
+                arrayNumber[viTri]=arrayNumber[j];
+                arrayNumber[j]=max;
+            }
+
+        }
+        console.log(arrayNumber);
+
+    }
+    sapXep();
+</script>
+</body>
+</html>
