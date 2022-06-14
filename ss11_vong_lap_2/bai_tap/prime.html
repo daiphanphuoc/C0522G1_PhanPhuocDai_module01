@@ -7,13 +7,13 @@
 <body>
 
 <script>
-    function prime(n) {
+    function prime(nguyen) {
         let i = 2;
-        if (n < 2) {
+        if (nguyen < 2) {
             return false;
         }
-        while (i <= n / 2) {
-            if (n % i == 0) {
+        while (i <= nguyen / 2) {
+            if (nguyen % i == 0) {
                 return false;
             }
             i++;

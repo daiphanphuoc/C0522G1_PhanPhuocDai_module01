@@ -7,29 +7,29 @@
 <body>
 
     <h2>Type anthing slowly</h2>
-    <form name="f">
+    <form name="form">
         <textarea name="txt" cols="40" rows="10" onkeydown=" typeTextarea();" ></textarea>
     </form>
 <script >
-            let a=new Array(),n="";
-            a=[" ","i"," ","l","o","v","e"," ","y","o","u"];
+            let arr=new Array(),str="";
+            arr=[" ","i"," ","l","o","v","e"," ","y","o","u"];
             function typeTextarea(){
-                let t = document.f.txt.value;
-                j = t.length;
-                if(j > 0)
+                let text = document.form.txt.value;
+                wight = text.length;
+                if(wight > 0)
                 {
-                    for(let i=1; i<=j; i++)
+                    for(let i=1; i<=wight; i++)
                     {
-                        n = n + a[i];
-                        if(i == a.length)
+                        str = str + arr[i];
+                        if(i == arr.length)
                         {
-                            document.f.txt.value = "";
-                            n = "";
+                            document.form.txt.value = "";
+                            str = "";
                         }
                     }
                 }
-                document.f.txt.value = n;
-                n="";
+                document.form.txt.value = str;
+                str="";
                 setTimeout("typeTextarea()", 1);
                 //return false;
             }

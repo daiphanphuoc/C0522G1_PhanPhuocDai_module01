@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Điếm số từ trong 1 chuỗi</title>
+</head>
+<body>
+<script>
+    let str=prompt("nhập vào 1 chuỗi");
+    str+=" ";
+    let arrWord =new Array();
+    let ind=0;
+    let location1=0;
+    for(let i=1;i<str.length;i++){
+        if(str[i]===" "&& str[i-1]!==" "){
+            let strTam="";
+            for(let j=location1;j<i;j++){
+                strTam+=str[j];
+            }
+           // alert(strTam);
+            arrWord[ind]=strTam;
+            ind++;
+            location1=i+1;
+
+        }
+    }
+  //  alert(arrWord.length);
+    for(let i=0;i<arrWord.length;i++){
+        document.write(arrWord[i]+"    ");
+    }
+</script>
+</body>
+</html>

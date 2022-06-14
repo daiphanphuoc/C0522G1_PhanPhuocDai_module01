@@ -10,7 +10,26 @@
     *  Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b.
     * Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên.
     *  Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c.*/
-    let
+    let arrayA=new Array(10);
+    let arrayB=new Array(10);
+    for(let i=0;i<arrayA.length;i++){
+        arrayA[i]=parseInt(prompt("nhập vào phần tử thứ "+i+" của mảng a"));
+    }
+    for(let i=0;i<arrayB.length;i++){
+        arrayB[i]=parseInt(prompt("nhập vào phần tử thứ "+i+" của mảng b"));
+    }
+    let arrayC=new Array(20);
+    //nối mảng
+    for(let i=0;i<arrayA.length;i++){
+        arrayC[i]=arrayA[i];
+    }
+    for(let i=0;i<arrayB.length;i++){
+        arrayC[arrayA.length+i]=arrayB[i];
+    }
+    //hiển thị mảng c
+    for(let i=0;i<arrayC.length;i++){
+        document.write(arrayC[i]+"   ");
+    }
 </script>
 </body>
 </html>
