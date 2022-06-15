@@ -26,7 +26,7 @@ d.	Xoá đi phần tử đầu tiên của mảng X[i], xuất lại mảng X[i]
     for (let i = 0; i < arrMaxRow.length; i++) {
         document.write(arrMaxRow[i] + " ");
     }
-    xoaDau();
+    xoaDau(arrMaxRow);
     document.write("<br>");
     for (let i = 0; i < arrMaxRow.length; i++) {
         document.write(arrMaxRow[i] + " ");
@@ -84,13 +84,13 @@ d.	Xoá đi phần tử đầu tiên của mảng X[i], xuất lại mảng X[i]
         }
     }
 
-
-    function xoaDau() {
-        for (let i=0;i<arrMaxRow.length-1;i++){
-            arrMaxRow[i]=arrMaxRow[i+1];
+    function xoaDau(arr) {
+        for (let i=0;i<arr.length;i++){
+            arr[i]=arr[i+1];
         }
-        arrMaxRow.length=arrMaxRow.length-1;
+        arr.length=arr.length-1;
     }
+
 </script>
 </body>
 </html>

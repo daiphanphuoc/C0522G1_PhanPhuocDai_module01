@@ -16,9 +16,10 @@
     let viTri=0;
 
     /*hiển thị mỗi từ trên mỗi dòng*/
+    str=str+" ";
     for (let i=0;i<str.length;i++){
         //if(str[i].charCodeAt(0)==32){
-        if(str[i]==" "){
+        if(str[i]===" "){
             for (let j=viTri;j<i;j++){
                 document.write(str[j]);
             }
@@ -26,9 +27,9 @@
             viTri=i+1;
         }
     }
-    for (let j=viTri;j<str.length;j++){
+    /*for (let j=viTri;j<str.length;j++){
         document.write(str[j]);
-    }
+    }*/
     /*đếm từ trong chuỗi*/
     document.write("<br>");
     let demTu=0;
@@ -39,7 +40,7 @@
         }
 
     }
-    alert(demTu);
+    alert("số từ của chuỗi: " +demTu);
     /*tần số xuất hiện các từ trên chuỗi*/
 
     let arrayWord=new Array();
