@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    * 11.	Viết chương trình thực hiện các công việc như sau :
+a.	Nhập một mảng a gồm n phần tử kiểu nguyên int
+b.	Tính tổng số dương lẻ mảng a
+c.	Nhập phần tử k, tìm xem k có xuất hiện trong mảng a không. Nếu có chỉ ra phần tử ở vị trí đầu tiên
+d.	Sắp sếp mảng a theo thứ tự tăng dần..
+e.	Chèn phần tử p vào mảng a sao cho mảng a vẫn đảm bảo tăng dần và xuất lại mảng a.
+*/
+    let arrayNumber =new Array();
+    creatArrayNumber();
+    document.write("tổng các phần tử lẻ dương của mảng:"+ sumOdd()+"<br>");
+    sapXepTang();
+    document.write(arrayNumber);
+    document.write("<br>");
+    chenTang(4);
+    document.write(arrayNumber);
+
+
+    function creatArrayNumber() {
+        let nPhanTu=parseInt(prompt("nhập vào số lượng phần tử của mảng:"));
+        for(let i=0;i<nPhanTu;i++){
+            arrayNumber[i]=parseInt(prompt("nhập vào phần tử "+i+" của mảng:"));
+        }
+    }
+
+    function sumOdd() {
+        let total=0;
+        for(let i=0;i<arrayNumber.length;i++){
+            if(arrayNumber[i]%2===1){
+                total+=arrayNumber[i];
+            }
+        }
+        return total;
+    }
+    function timSoK(soK) {
+        soK=parseInt(soK);
+        for (let i=0;i<arrayNumber;i++){
+            if(arrayNumber[i]===soK){
+                return i;
+            }
+        }
+        return -1;
+    }
+    function sapXepTang() {
+        for (let i=0;i<arrayNumber.length-1;i++){
+            for (let j=i+1;j<arrayNumber.length;j++){
+                if(arrayNumber[i]>arrayNumber[j]){
+                    let tam=arrayNumber[i];
+                    arrayNumber[i]=arrayNumber[j];
+                    arrayNumber[j]=tam;
+                }
+            }
+        }
+    }
+    function chenTang(soP) {
+        soP=parseInt(soP);
+        for (let i=0;i<arrayNumber.length;i++){
+            if (soP<=arrayNumber[i]){
+                for (let j=arrayNumber.length;j>i;j--){
+                    arrayNumber[j]=arrayNumber[j-1];
+                }
+                arrayNumber[i]=soP;
+                break;
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyển đổi đơn vị đo độ dài</title>
+</head>
+<body>
+
+<input type="number" id="meter">
+<label>mét</label>
+<input type="button" onclick="run1()" value="run1">
+<p id="result1">nơi hiển thị kết quả</p>
+<br>
+<input type="number" id="foot">
+<label>feet</label>
+<input type="button" onclick="run2()" value="run2"><br>
+<p id="result2">nơi hiển thị kết quả</p>
+<script>
+    function footToMeter(foot){
+        foot=parseFloat(foot);
+        return foot*0.305;
+    }
+
+
+    function meterToFoot(meter){
+        meter=parseFloat(meter);
+        return meter*3.279;
+    }
+    function run1() {
+        let met=document.getElementById("meter").value;
+        alert(met);
+        let result2=meterToFoot(met);
+        alert(result2);
+        document.getElementById("result1").innerText=result2;
+    }
+    function run2() {
+        document.getElementById("result2").innerText=footToMeter(document.getElementById("foot").value);
+    }
+</script>
+</body>
+</html>

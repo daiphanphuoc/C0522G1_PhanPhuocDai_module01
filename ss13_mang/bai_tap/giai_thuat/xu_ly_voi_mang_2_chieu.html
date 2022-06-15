@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*12.	Viết chương trình thực hiện công việc sau:
+a.	Nhập ma trận a (m dòng, n cột) gồm các phần tử kiểu int
+b.	Tính tích các số là bội số của 3 nằm trên dòng đầu tiên của ma trận a.
+c.	Tạo ra mảng một chiều X[i] với X[i] là các giá trị lớn nhất trên dòng i của ma trận a
+d.	Xoá đi phần tử đầu tiên của mảng X[i], xuất lại mảng X[i].
+
+*/
+    /*khai báo biến*/
+    let arrayA2D = new Array();
+    let arrMaxRow = new Array();
+    /*gọi hàm*/
+    creatArray2D(4, 3);
+    duyetMang2D(4, 3);
+    document.write("tich bội 3 của dòng 1: " + tichBoi3(1));
+    maxRow();
+    alert(arrMaxRow.length);
+    document.write("<br>");
+    for (let i = 0; i < arrMaxRow.length; i++) {
+        document.write(arrMaxRow[i] + " ");
+    }
+    xoaDau();
+    document.write("<br>");
+    for (let i = 0; i < arrMaxRow.length; i++) {
+        document.write(arrMaxRow[i] + " ");
+    }
+
+
+
+
+
+    /*xây dựng các hàm*/
+    function creatArray2D(row, col) {
+        row = parseInt(row);
+        col = parseInt(col);
+        //alert(row);
+        for (let r = 0; r < row; r++) {
+            let arrayR = new Array();
+            for (let c = 0; c < col; c++) {
+                arrayR[c] = parseInt(prompt("nhập vào phần tử [" + r + "," + c + "]"));
+            }
+            arrayA2D[r] = arrayR;
+        }
+    }
+
+    function duyetMang2D(row, col) {
+        for (let r = 0; r < row; r++) {
+            for (let c = 0; c < col; c++) {
+                document.write(arrayA2D[r][c]+" ");
+            }
+            document.write("<br>");
+        }
+
+    }
+
+    function tichBoi3(row) {
+        row = parseInt(row);
+        let tich = 1;
+        for (let i = 0; i < arrayA2D[row].length; i++) {
+            if (arrayA2D[row][i] % 3 == 0) {
+                tich = tich * arrayA2D[row][i];
+            }
+        }
+        return tich;
+    }
+
+    function maxRow() {
+        let max;
+        for (let r = 0; r < arrayA2D.length; r++) {
+            max = arrayA2D[r][0];
+            for (let c = 1; c < arrayA2D[r].length; c++) {
+                if (max < arrayA2D[r][c]) {
+                    max = arrayA2D[r][c];
+                }
+            }
+            arrMaxRow[r] = max;
+        }
+    }
+
+
+    function xoaDau() {
+        for (let i=0;i<arrMaxRow.length-1;i++){
+            arrMaxRow[i]=arrMaxRow[i+1];
+        }
+        arrMaxRow.length=arrMaxRow.length-1;
+    }
+</script>
+</body>
+</html>

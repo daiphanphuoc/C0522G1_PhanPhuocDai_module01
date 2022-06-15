@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *  Nhập một chuổi ký tự tuỳ ý, sau đó thực hiện công việc sau:
+    *   a. In mỗi từ trên mỗi dòng
+    *   b. Đếm số từ có trong chuổi đã cho.
+    *   C. Đưa ra bảng tần số xuất hiện của các từ
+    * */
+    let str=prompt("nhập chuỗi tùy ý");
+    let viTri=0;
+
+    /*hiển thị mỗi từ trên mỗi dòng*/
+    for (let i=0;i<str.length;i++){
+        //if(str[i].charCodeAt(0)==32){
+        if(str[i]==" "){
+            for (let j=viTri;j<i;j++){
+                document.write(str[j]);
+            }
+            document.write("<br>");
+            viTri=i+1;
+        }
+    }
+    for (let j=viTri;j<str.length;j++){
+        document.write(str[j]);
+    }
+    /*đếm từ trong chuỗi*/
+    document.write("<br>");
+    let demTu=0;
+    str=str+" ";
+    for(let i=1;i<str.length;i++){
+        if(str[i]===" "&&str[i-1]!==" "){
+            demTu++;
+        }
+
+    }
+    alert(demTu);
+    /*tần số xuất hiện các từ trên chuỗi*/
+
+    let arrayWord=new Array();
+
+    let arrayTanSo=new Array();
+    let strTam="";
+    let count=0;
+    viTri=0;
+    for(let i=1;i<str.length;i++){
+        if(str[i]=== " " && str[i-1]!==" "){
+            strTam="";
+            for(let j=viTri;j<i;j++){
+                strTam=strTam+str[j];
+            }
+
+            arrayWord[count]=strTam;
+            count++;
+            viTri=i+1;
+
+        }
+    }
+    //alert(arrayWord.length);
+    if(arrayWord.length>0){
+        arrayTanSo[0]=arrayWord[0];
+        arrayTanSo[1]=1;
+
+        //let indexTanSo;
+        let dem=0;
+        for(let i=1;i<arrayWord.length;i++){
+            for (let j=0;j<arrayTanSo.length;j=j+2){
+                if(arrayTanSo[j]==arrayWord[i]){
+                    arrayTanSo[j+1]=arrayTanSo[j+1]+1;
+                    dem++;
+                    break;
+                }
+            }
+            if(dem===0){
+                arrayTanSo.push(arrayWord[i]);
+                arrayTanSo.push(1);
+            }
+        }
+        for(let i=0;i<arrayTanSo.length;i=i+2){
+            document.write(arrayTanSo[i]+": "+arrayTanSo[i+1]+"<br>");
+        }
+
+    }
+</script>
+</body>
+</html>
