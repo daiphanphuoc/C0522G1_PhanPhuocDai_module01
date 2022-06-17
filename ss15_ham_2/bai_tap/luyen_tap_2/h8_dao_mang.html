@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNumber = new Array();
+    creatArrayNumber(arrNumber);
+    displayArr(arrNumber);
+    swapArray(arrNumber);
+    document.write("<br>mảng sau khi đảo:");
+    displayArr(arrNumber);
+
+    function creatArrayNumber(arr) {
+        let nPhanTu = parseInt(prompt("nhập vào số lượng phần tử của mảng:"));
+        for (let i = 0; i < nPhanTu; i++) {
+            arr[i] = parseInt(prompt("nhập vào phần tử " + i + " của mảng:"));
+        }
+    }
+
+   /* function swap(numberA, numberB) {
+        let stamp = numberA;
+        numberA = numberB;
+        numberB = stamp;
+    }
+*/
+    function swapArray(arr) {
+        let first = 0;
+        let last = arr.length - 1;
+        while (first < last) {
+            //swap(arr[first], arr[last]);
+            let stamp=arr[first];
+            arr[first]=arr[last];
+            arr[last]=stamp;
+            first++;
+            last--;
+        }
+    }
+
+
+    function displayArr(arr) {
+        for (let i=0;i<arr.length;i++){
+            document.write(arr[i]+" ");
+        }
+    }
+</script>
+</body>
+</html>

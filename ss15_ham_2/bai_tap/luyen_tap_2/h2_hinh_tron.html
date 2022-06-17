@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    let radius = prompt("nhập vào bán kính hình tròn:");
+    let area=calculateCircleArea(radius);
+    let diameter=calculateDiameterOfACircle(radius);
+    alert("diện tích hình tròn là : "+ area);
+    alert("chu vi hình tròn là:"+ diameter);
+
+    function calculateCircleArea(radius) {
+        return radius * radius * Math.PI;
+    }
+
+    function calculateDiameterOfACircle(radius) {
+        return radius * 2 * Math.PI;
+    }
+</script>
+</body>
+</html>

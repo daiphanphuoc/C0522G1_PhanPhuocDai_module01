@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /*Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không.
+    Nếu là ký tự số hàm trả về true, ngược lại trả về false.*/
+    function checkCharNumber(char) {
+        if ((char / char === 1)||char===0||char==="0") {
+            return true;
+        }
+        return false;
+    }
+
+    let strChar = prompt("nhaapj vaof 1 kys tự: ");
+    if (checkCharNumber(strChar)) {
+        alert("ký tự số");
+
+    } else {
+        alert("không phải ký tự số");
+    }
+</script>
+</body>
+</html>

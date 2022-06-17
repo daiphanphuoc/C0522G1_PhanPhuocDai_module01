@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="display"></p>
+<script>
+    /*hiển thị danh sách sản phẩm
+Có thể thêm một sản phẩm mới vào danh sách
+Có thể sửa tên của sản phẩm trong danh sách
+Có thể xoá một sản phẩm khỏi danh sách*/
+    let arrProducts = new Array();
+    creatArrProducts(arrProducts, 2);
+    display(arrProducts);
+
+    function creatArrProducts(arr, amount) {
+        for (let i = 0; i < amount; i++) {
+            arr[i] = prompt("nhập vào sản phẩm thứ " + (i + 1) + ": ");
+
+        }
+    }
+
+    function display(arr) {
+
+        let showAdd = "<form id='add' method='get'> <h2>Add new product</h2>" +
+            " <input type='text' id='product'><input type='button' value='Add' onclick='addProduct()'></form><br>"
+        let show = "<table border='1' width='50%' cellpadding='3' cellspacing='3'>"
+        show = show + "<tr><th>STT</th><th>Sản phẩm</th><th>Xóa</th>";
+
+        let showUpdate = "<form id='product' method='get'>";
+        showUpdate += "<select id='selectProduct'>";
+
+        for (let i = 0; i < arr.length; i++) {
+            show = show + "<tr><td>" + (i + 1) + "</td><td>" + arr[i]
+                + "</td><td><button onclick='deleteP(" + i + ");'>Xóa</button></td></tr>";
+
+            showUpdate += "<option value='" + i + "'>" + arr[i] + "</option>";
+
+        }
+        showUpdate += "</select><button onclick='updateP()'>Update</button>";
+        showUpdate += "</form >"
+
+
+        show += "</table>";
+        let result=showAdd+show+showUpdate;
+        document.getElementById("display").innerHTML=result;
+        /*document.write(showAdd);
+        document.write(show);
+        document.write(showUpdate);*/
+    }
+
+    function deleteP(ind) {
+        deleteProduct(arrProducts, ind);
+        display(arrProducts);
+    }
+
+    function deleteProduct(arr, ind) {
+        for (let j = ind; j < arr.length - 1; j++) {
+            arr[j] = arr[j + 1];
+        }
+        arr.length = arr.length - 1;
+    }
+
+    function updateP() {
+        alert("update")
+        let ind = document.getElementById('selectProduct').value;
+        updateProducts(arrProducts, ind);
+        display(arrProducts);
+    }
+
+    function updateProducts(arr, ind) {
+
+        arr[ind] = prompt("sửa lại sản phẩm");
+        display(arr);
+    }
+
+    function addProduct() {
+        let prod = document.getElementById("product").value;
+        moreProducts(arrProducts, prod);
+        display(arrProducts);
+    }
+
+    function moreProducts(arr, product) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === product) {
+                count++;
+                break;
+            }
+        }
+        if (count === 0) {
+            arr.push(product);
+        }
+    }
+
+
+</script>
+</body>
+</html>

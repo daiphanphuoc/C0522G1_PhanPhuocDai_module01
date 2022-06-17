@@ -5,117 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-<h3>Caro Game Simple</h3>
-<p id="carogame"/>
-
 <script>
-    let banCo = document.getElementById("carogame");
-
-    let board = [];
-    let count = 0;
-    creatArr();
-    display();
-    function creatArr() {
-        count=0;
-        for (let i = 0; i < 25; i++) {
-            board[i] = new Array(".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".");
+    function swap_adjacent_digits(n) {
+        if (n.toString().length % 2 != 0) {
+            return false;
         }
-    }
-    function display() {
-
-        let data = "<table border=\"1\" cellpadding=\"1\" cellspacing=\"3\"  >";
-        for (let i = 0; i < 25; i++) {
-            data += "<tr>";
-            for (let j = 0; j < 25; j++) {
-                if (board[i][j] == ".") {
-                    data += "<td width=\"25px\"><input type='button' value='" + board[i][j] + "' onclick='play1(" + i + "," + j + ")'> </td>";
-                } else {
-                    data += "<td width=\"25px\"><input type='button'  value='" + board[i][j] + "'> </td>";
-                }
-
-            }
-            data += "</tr>";
+        var result = 0,
+            x = 1;
+        while (n != 0) {
+            var dg1 = n % 10,
+                dg2 = ((n - dg1) / 10) % 10;
+            result += x * (10 * dg1 + dg2);
+            n = Math.floor(n / 100);
+            x *= 100;
         }
-        data += "</table>";
-        banCo.innerHTML = data;
+        return result;
     }
-
-    function play1(x, y) {
-        x = parseInt(x);
-        y = parseInt(y);
-        // alert(x);
-        /* let per;
-         do {
-             per = parseInt(prompt("người chơi 1 hay 2:"));
-         } while (per < 1 || per > 2);*/
-        count = count + 1;
-        switch (count % 2) {
-            case 1:
-                changeValue1(x, y);
-                display();
-                if (checkWin() === 1) {
-                    alert("người chơi 1 thắng");
-                    creatArr();
-                    display();
-                }
-                break;
-            case 0:
-                changeValue2(x, y);
-                display();
-                if (checkWin() === 2) {
-                    alert("người chơi 2 thắng");
-                    creatArr();
-                    display();
-                }
-                break;
-        }
-
-    }
-
-    function checkWin() {
-        for (let i = 0; i < 25; i++) {
-            for (let j = 0; j < 25; j++) {
-                let dieuKien11 = board[i][j] === 'X' && board[i][j + 1] === 'X' && board[i][j + 2] === 'X' && board[i][j + 3] === 'X' && board[i][j + 4] === 'X';
-                let dieuKien12 = board[i][j] === 'X' && board[i + 1][j] === 'X' && board[i + 2][j] === 'X' && board[i + 3][j] === 'X' && board[i + 4][j] === 'X';
-                let dieuKien13 = board[i][j] === 'X' && board[i + 1][j + 1] === 'X' && board[i + 2][j + 2] === 'X' && board[i + 3][j + 3] === 'X' && board[i + 4][j + 4] === 'X';
-
-                let dieuKien21 = board[i][j] === 'O' && board[i][j + 1] === 'O' && board[i][j + 2] === 'O' && board[i][j + 3] === 'O' && board[i][j + 4] === 'O';
-                let dieuKien22 = board[i][j] === 'O' && board[i + 1][j] === 'O' && board[i + 2][j] === 'O' && board[i + 3][j] === 'O' && board[i + 4][j] === 'O';
-                let dieuKien23 = board[i][j] === 'O' && board[i + 1][j + 1] === 'O' && board[i + 2][j + 2] === 'O' && board[i + 3][j + 3] === 'O' && board[i + 4][j + 4] === 'O';
-                if (dieuKien11 || dieuKien12 || dieuKien13) {
-                    return 1;
-                }
-                if (dieuKien21 || dieuKien22 || dieuKien23) {
-                    return 2;
-                }
-                if (i > 3) {
-                    let dieuKien14 = board[i][j] === 'X' && board[i - 1][j + 1] === 'X' && board[i - 2][j + 2] === 'X' && board[i - 3][j + 3] === 'X' && board[i - 4][j + 4] === 'X';
-                    let dieuKien24 = board[i][j] === 'O' && board[i - 1][j + 1] === 'O' && board[i - 2][j + 2] === 'O' && board[i - 3][j + 3] === 'X' && board[i - 4][j + 4] === 'O';
-                    if (dieuKien14) {
-                        return 1;
-                    }
-                    if (dieuKien24) {
-                        return 2;
-                    }
-                }
-            }
-        }
-        return 0;
-    }
-
-    function changeValue1(x, y) {
-        x = parseInt(x);
-        y = parseInt(y);
-        board[x][y] = "X";
-    }
-
-    function changeValue2(x, y) {
-        x = parseInt(x);
-        y = parseInt(y);
-        board[x][y] = "O";
-
-    }
-
 </script>
 </body>
 </html>

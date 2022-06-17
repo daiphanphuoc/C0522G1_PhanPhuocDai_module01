@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="display()">Star</button>
+<p id="display"></p>
+
+<script>
+    /*Tạo một mảng với bảy phần tử dạng chuỗi có giá trị là tên các ngôi sao sau:
+     Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe và Regulus.*/
+    let arrStar = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    /*Tạo một mảng khác với bảy phần tử dạng chuỗi có giá trị là tên các chòm sao tương ứng chứa các ngôi sao:
+     Ursa Minor, Tarurus, Cygnus, Lyra, Aquila, Ursa Major và Leo.*/
+    let arrConstellation = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function starOfConstellation(strStar) {
+        for (let i = 0; i < arrStar.length; i++) {
+            if (strStar === arrStar[i]) {
+                return arrConstellation[i];
+            }
+        }
+        return false;
+    }
+
+    function display() {
+        let result = starOfConstellation(prompt("nhập vào tên 1 ngôi sao:"));
+        if (result) {
+            document.getElementById('display').innerText = result;
+        } else {
+            alert("không tìm thấy");
+        }
+    }
+</script>
+</body>
+</html>

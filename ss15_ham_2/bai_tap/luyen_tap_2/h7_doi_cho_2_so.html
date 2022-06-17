@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function swap(numberA,numberB) {
+        let stamp=[];
+        stamp[0]=numberB;
+        stamp[1]=numberA;
+        return stamp;
+    }
+
+
+    let firstNumber=prompt("nhập vào 1 sô:");
+    let secondNumber=prompt("nhập vào 1 sô:");
+    document.write(firstNumber+" "+secondNumber+"<br>");
+    let arr = swap(firstNumber,secondNumber);
+    firstNumber=arr[0];
+    secondNumber=arr[1];
+    document.write(firstNumber+" "+secondNumber);
+</script>
+</body>
+</html>

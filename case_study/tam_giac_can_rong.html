@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tam giác cân rỗng</title>
+</head>
+<body>
+<p id="tamgiac"></p>
+<script>
+
+    let cao = parseInt(prompt("chieu cao tam giác"));
+
+    let dai = cao * 2 - 1;
+
+    let tamGiac = "<table width=\"25px\">";
+    for (let dong = 0; dong < cao; dong++) {
+        tamGiac += "<tr>";
+        for (let cot = 0; cot < dai; cot++) {
+            if (cot === cao - dong-1||cot === cao-1 + dong||dong===cao-1) {
+                tamGiac += "<td>" + "*" + "</td>";
+
+            } else {
+                tamGiac += "<td></td>";
+            }
+        }
+    }
+    tamGiac += "</table>"
+    document.getElementById("tamgiac").innerHTML = tamGiac;
+</script>
+</body>
+</html>
