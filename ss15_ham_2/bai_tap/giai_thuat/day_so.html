@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dãy số</title>
+</head>
+<body>
+<script>
+
+    /*Viết 1 hàm nhận vào 1 số nguyên bất kì. Hiển thị
+các số KHÔNG phải số nguyên tố từ 0 đến số đấy.*/
+    let number=parseInt(prompt("enter a positive integer: "));
+    printNumbersNotPrime(number);
+
+
+
+    function isPrime(number) {
+        for (let i=2;i<=Math.sqrt(number);i++){
+            if(number%i===0){
+                return false;
+            }
+        }
+        return true;
+    }
+    function printNumbersNotPrime(number) {
+        if(number>1){
+            document.write(0+ " "+1+" ");
+        }
+        for ( let i=2;i<=number;i++){
+            if(!isPrime(i)){
+                document.write(i+"  ");
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -6,21 +6,50 @@
 </head>
 <body>
 <script>
-    function swap_adjacent_digits(n) {
-        if (n.toString().length % 2 != 0) {
-            return false;
+    let number = parseInt(prompt("Input Number:"));
+    let primeNumber = [];
+    let output = [];
+    show(number, primeNumber);
+    console.log(primeNumber);
+    compare(number, primeNumber, output);
+    console.log(output);
+    document.write(output);
+
+    function show(a, array1) {
+        let divisor = 0;
+        for (let i = 2; i <= a; i++) {// vòng lặp tìm các số nguyên tố nhỏ hơn số a+1
+            for (let j = 1; j <= i; j++) {//vòng lặp kt số i co phải nguyên tố
+                if (i % j === 0) {
+                    divisor += 1;// đếm ước
+                }
+            }
+            if (divisor === 2) {
+                array1.push(i);
+            }
+            divisor = 0;
         }
-        var result = 0,
-            x = 1;
-        while (n != 0) {
-            var dg1 = n % 10,
-                dg2 = ((n - dg1) / 10) % 10;
-            result += x * (10 * dg1 + dg2);
-            n = Math.floor(n / 100);
-            x *= 100;
-        }
-        return result;
+
+
     }
+
+
+    function compare(b, array2, array3) {
+        for (let i = 0; i <= b; i++) {
+            let j;
+            for (j = 0; j < array2.length; j++) {//so sánh số i vơi tungwf phần tuer trong mảng arr2
+                if (i === array2[j]) {
+                    alert(i);
+                    break;
+                }
+
+            }
+            if(j===array2.length){
+                array3.push(i);
+            }
+        }
+    }
+
+
 </script>
 </body>
 </html>

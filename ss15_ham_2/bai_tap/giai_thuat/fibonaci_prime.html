@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dãy nguyên tố fibonaci</title>
+</head>
+<body>
+<script>
+    /*Viết 1 hàm nhận vào 1 số nguyên duy nhất
+    hàm trả về mảng số nguyên từ 0 đến số được truyền vào
+và phải thỏa mãn 2 yêu cầu: thứ nhất số đó thuộc dãy fibonacci ,
+thứ 2 số đó phải là số nguyên tố. In ra mảng đấy*/
+    let number = parseInt(prompt("nhập vào 1 số: "));
+    let arrNumbers = numbersFibonacciPrime(number);
+    displayArr(arrNumbers);
+
+    //cách 1
+    function numbersPrimeFibonacci(number) {
+        let arrPrimeFibonacci = [];
+        for (let i = 2; i <= number; i++) {
+            if (isPrime(i) && checkFibonacci(i)) {
+                arrPrimeFibonacci.push(i);
+            }
+        }
+        return arrPrimeFibonacci;
+    }
+
+    function displayArr(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            document.write(arr[i] + " ");
+        }
+    }
+
+    //cách 2:
+    function numbersFibonacciPrime(number) {
+        let arrFibonacciPrime = [];
+        if (number <= 1) {
+            return;
+        } else {
+            let f0 = 1;
+            let f1 = 1;
+            let f = 1;
+            while (f <= number) {
+
+                if (isPrime(f)) {
+                    arrFibonacciPrime.push(f);
+                }
+                f = f0 + f1;
+                f0 = f1;
+                f1 = f;
+            }
+        }
+        return arrFibonacciPrime;
+    }
+
+    function checkFibonacci(number) {
+        if (number === 1 || number === 2) {
+            return true;
+        } else {
+            let f0 = 1;
+            let f1 = 1;
+            let f = 1;
+            while (f < number) {
+                f = f0 + f1;
+                f0 = f1;
+                f1 = f;
+            }
+            if (number === f) {
+                return true;
+            }
+            return false;
+        }
+    }
+
+    function isPrime(number) {
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+</body>
+</html>

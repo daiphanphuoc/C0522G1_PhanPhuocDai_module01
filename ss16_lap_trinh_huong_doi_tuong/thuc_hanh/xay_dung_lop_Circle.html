@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*let MyCircle = function (radius, color) {
+        this.radius = radius;
+        this.color = color;
+        this.getRadius = function () {
+            return this.radius;
+        }
+        this.getArea = function () {
+            return this.radius * this.radius * Math.PI;
+        }
+    };
+
+
+    let circle = new MyCircle(3,"red");
+    let area = circle.getArea();
+    alert(circle.getRadius());
+    alert(area);*/
+
+
+    class Circle {
+        constructor(radius, color) {
+            this.radius=radius;
+            this.color=color;
+        }
+        getRadius(){
+            return this.radius;
+        }
+
+        getColor(){
+            return this.color;
+        }
+        getArea(){
+            return this.radius*this.radius*Math.PI;
+        }
+        setRadius(radius){
+            this.radius=radius;
+        }
+
+        setColor(color){
+            this.color=color;
+        }
+    }
+
+    let circle = new Circle(3,"red");
+    let area = circle.getArea();
+    alert(circle.getRadius());
+    alert(area)
+</script>
+
+</body>
+</html>

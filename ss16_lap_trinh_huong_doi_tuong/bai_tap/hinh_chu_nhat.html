@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình chữ nhật</title>
+</head>
+<body>
+<canvas id="DemoCanvas" width="1000px" height="2000px" ></canvas>
+<script>
+    /*Viết một lớp các đối tượng hình chữ nhật lấy tên là Rectangle, mỗi hình chữ nhật đều có những đặc tính sau:
++ Có thông số chiều dài (int).
++ Có thông số chiều rộng (int).
++ Có tính năng tính diện tích.
++ Có tính năng tính chu vi.
++ Có tính năng hiển thị trực quan hình chữ nhật bằng cách vẽ lên canvas
+Sử dụng lớp Rectangle vừa định nghĩa để viết một chương trình JavaScript  với kịch bản như sau:
+Khai báo và khởi tạo một đối tượng kiểu Rectangle.
+Hiển thị hình chữ nhật trên màn hình web
+Thay đổi chiều dài và chiều rộng của hình chữ nhật.
+In ra màn hình diện tích và chu vi của hình chữ nhật đó.*/
+
+    class Rectangle {
+        longs;
+        widths;
+        constructor(longs, width) {
+            this.longs = longs;
+            this.widths = width;
+        }
+
+        getLongs() {
+            return this.longs;
+        }
+
+        getWidths() {
+            return this.widths;
+        }
+
+        setLongs(newLongs) {
+            this.longs = newLongs;
+        }
+
+        setWidths(newWidths) {
+            this.widths = newWidths;
+        }
+
+        getArea() {
+            return this.longs * this.widths;
+        }
+
+        getPerimeter() {
+            return (this.longs + this.widths) * 2;
+        }
+
+        /*toCanvas(idCanvas){
+            let ctx = document.getElementById("myCanvas").getContext("2d");
+        }*/
+    }
+
+    let rectangle = new Rectangle(4, 3);
+    let area = rectangle.getArea();
+    let perimeter = rectangle.getPerimeter();
+    alert("chiều dài: " + rectangle.getLongs() + " chiều rộng: " + rectangle.getWidths()
+        + "có diện tích: " + area + " và chu vi: " + perimeter);
+    rectangle.setLongs(600);
+    rectangle.setWidths(200);
+    area = rectangle.getArea();
+    perimeter = rectangle.getPerimeter();
+    alert("chiều dài: " + rectangle.getLongs() + " chiều rộng: " + rectangle.getWidths()
+        + "có diện tích: " + area + " và chu vi: " + perimeter);
+
+    let canvas = document.getElementById("DemoCanvas");
+    let ctx = canvas.getContext('2d');
+    ctx.fillStyle='blue';
+    ctx.fillRect(10, 10, rectangle.getWidths(), rectangle.getLongs());
+</script>
+</body>
+</html>

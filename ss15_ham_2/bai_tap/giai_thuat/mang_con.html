@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng con</title>
+</head>
+<body>
+<script>
+    /*Xây dựng 1 hàm nhận vào 2 mảng bất kì. 
+    Nếu mảng thứ 2 là con của mảng thứ nhất thì trả về true,ngược lại trả về false. 
+    Ví dụ: 
+Mảng thứ nhất [ 1, 2, 3, 4 ] mảng thứ 2 [2, 3] => true. 
+Mảng thứ nhất [ 1, 2, 3, 4 ] mảng thứ 2 [3, 2] => false.*/
+    let arrayNumber=[1,2,3,4,4];
+    let subarrayNumber=[2,4];
+    let check=checkSubarray(arrayNumber,subarrayNumber);
+    alert(check);
+
+
+    function checkSubarray(arr,subarr) {/*kiểm tra mảng arr2 có phải mảng con của arr1*/
+        if(subarr.length>arr.length){
+            return false;
+        }
+
+        for (let i=0;i<=arr.length-subarr.length;i++){
+            if(arr[i]===subarr[0]){
+                let j=0;
+
+                for(j=1;j<subarr.length;j++){
+
+                    if(subarr[j]!==arr1[i+j]){
+                        break;
+                    }
+                }
+
+                if(j===subarr.length){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
+</script>
+</body>
+</html>

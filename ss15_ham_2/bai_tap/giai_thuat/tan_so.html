@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tần số</title>
+</head>
+<body>
+<script>
+    /*Viết 1 hàm nhận vào 1 mảng các số nguyên.
+Đếm số lần xuất hiện của các phần tử trong mảng đó*/
+    let arrNumber=new Array();
+    let number=parseInt(prompt("nhập vào chiều dài của mảng"));
+    createArrayNumbers(arrNumber,number);
+    let arrFrequency=countFrequency(arrNumber);
+    for (let i=0 ; i<arrFrequency.length;i+=2){
+        document.write("số "+ arrFrequency[i]+" xuất hiện "+ arrFrequency[i+1]+ " lần<br>");
+
+
+    }
+
+
+
+
+    function createArrayNumbers(arr, number) {
+        for (let i = 0; i < number; i++) {
+            arr[i] = prompt("nhập vào phần tủ thứ " + i + " ");
+        }
+    }
+
+    function countFrequency(arr) {
+        let newArr = [];
+        if (arr.length > 0) {
+            newArr[0] = arr[0];
+            newArr[1] = 1;
+            let j;
+            for (let i = 1; i < arr.length; i++) {
+                for ( j = 0; j < newArr.length; j = j + 2) {
+                    if (newArr[j] === arr[i]) {
+                        newArr[j+1]=newArr[j+1]+1;
+                        break;
+                    }
+                }
+                if(j===newArr.length){
+                    newArr.push(arr[i]);
+                    newArr.push(1);
+                }
+            }
+        }
+        return newArr;
+    }
+</script>
+</body>
+</html>
