@@ -7,47 +7,55 @@
 <canvas id="retangle" width="1500px" height="1300px"></canvas>
 <body>
 <script>
-    class Retangle {
-        constructor(length, width) {
-            this.length = length;
-            this.width = width;
+
+    class ElectricLamp{
+        constructor(status) {
+            this.status = status;
         }
-
-        RetangleA() {
-            var Re = document.getElementById("retangle");
-            var reDispay = Re.getContext("2d");
-            reDispay.moveTo(0, 0);
-            reDispay.lineTo(this.length, 0);
-            reDispay.lineTo(this.length, this.width);
-            reDispay.lineTo(0, this.width);
-            reDispay.lineTo(0, 0);
-            reDispay.stroke();
-            document.write("<br>" + "Perimeter: " + this.getPerimeter() + "<br>" + "Area: " + this.getArea());
-        }
-
-
-        getArea() {
-            return this.width * this.length
-        }
-
-        getPerimeter() {
-            return (this.width + this.length) * 2;
-        }
-
-        setLength(newLength) {
-            this.length = newLength;
-        }
-
-        setWidth(newWidth) {
-            this.width = newWidth;
+        getStatus(){
+            return this.status;
         }
     }
 
-    let retangle1 = new Retangle(500, 300);
-    document.write("<br>" + "Perimeter: " + retangle1.getPerimeter() + "<br>" + "Area: " + retangle1.getArea());
-    retangle1.setLength(300);
-    retangle1.setWidth(250);
-    retangle1.RetangleA();
+    class SwitchButton{
+        constructor(lamp, status) {
+            this.status = status;
+            this.lamp = lamp;
+        }
+        getLamp(){
+            return this.lamp;
+        }
+
+        setLamp(lamp){
+            this.lamp = lamp;
+        }
+
+        connectToLamp(Electriclamp){
+            return this.lamp = Electriclamp;
+        }
+
+        switchOff(){
+            this.lamp.status = false;
+            return this.status = false;
+        }
+
+        switchOn(){
+            this.lamp.status = true;
+            return this.status = true;
+        }
+    }
+
+
+    let electricLamp_1 = new ElectricLamp(false);
+
+    let switchButton_1 = new SwitchButton(electricLamp_1,false); // kết nối giữa  công tắc 1 và đèn 1
+
+    console.log(switchButton_1.switchOn());
+    console.log(electricLamp_1.getStatus());
+    console.log(switchButton_1.switchOff());
+    console.log(electricLamp_1.getStatus());
+
 </script>
+
 </body>
 </html>
