@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm mảng đã dc sắp xếp trong mảng B, ko có trong mảng A</title>
+</head>
+<body>
+<script>
+    function checkArrNumber(arr, number) {
+        for (let i = 0, length = arr.length; i < length; i++) {
+            if (arr[i] === number) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function subarraySort(arrA, arrB) {
+        let subarr = [];
+        for (let i = 0; i < arrB.length; i++) {
+            if (checkArrNumber(arrA, arrB[i]) === false) {
+                subarr.push(arrB[i]);
+                i++;
+                let j = i;
+                while (checkArrNumber(arrA, arrB[j]) === false && arrB[j] >= arrB[j - 1]) {
+                    if (arrB[j] > arrB[j - 1]) {
+                        subarr.push(arrB[j]);
+                    }
+                    j++;
+                }
+                if (subarr.length > 1) {
+                    return subarr;
+                }
+                while (checkArrNumber(arrA, arrB[j]) === false && arrB[j] <= arrB[j - 1]) {
+                    if (arrB[j] < arrB[j - 1]) {
+                        subarr.push(arrB[j]);
+                    }
+                    j++;
+                }
+                if (subarr.length > 1) {
+                    return subarr;
+                }
+            }
+            subarr.pop();
+        }
+        return false;
+    }
+
+    let arrA = [1, 4, 6];
+    let arrB = [1, 3, 6, 7, 7, 6, 8, 9, 4];
+    let a = subarraySort(arrA, arrB);
+    alert(a);
+</script>
+</body>
+</html>

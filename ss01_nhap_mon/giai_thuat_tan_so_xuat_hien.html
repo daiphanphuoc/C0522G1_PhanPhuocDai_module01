@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function solution(inputArray) {
+        let arr=[];
+        arr[0]=inputArray[0];
+        arr[1]=1;
+        for(let i=1,length=inputArray.length;i<length;i++){
+            let j=0;
+            for(;j<arr.length;j+=2){
+                if(arr[j]===inputArray[i]){
+                    arr[j+1]++;
+                    break;
+                }
+            }
+            if(j===arr.length){
+                arr.push(inputArray[i]);
+                arr.push(1);
+            }
+        }
+        for(let i=3;i<arr.length;i+=2){
+            if(arr[i]!=arr[1]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+</script>
+</body>
+</html>

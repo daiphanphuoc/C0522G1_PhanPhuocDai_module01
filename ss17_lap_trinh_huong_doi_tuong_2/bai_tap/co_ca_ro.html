@@ -18,15 +18,23 @@
     </style>
 </head>
 <body>
-<button onclick="start();">start</button>
-<div id="game"></div>
+
+
+<div style="margin-top: 55%">
+    <button onclick="start();">start</button>
+</div>
+
+<div >
+    <p id="game"></p>
+</div>
+
 <script>
     const VALUE_EMPTY = 1;
-    const VALUE_X = 2;
-    const VALUE_O = 3;
-    const DEFAULT_COLS = 10;
-    const DEFAULT_ROWS = 10;
-    const DEFAULT_CELL_SIZE = 40;
+    const VALUE_X = "X";
+    const VALUE_O = "O";
+    const DEFAULT_COLS = 25;
+    const DEFAULT_ROWS = 25;
+    const DEFAULT_CELL_SIZE = 20;
 
     class Cell {
         constructor(x, y) {
@@ -76,16 +84,20 @@
 
         draw() {
             let gameBoardDiv = document.getElementById(this.elementId);
-            gameBoardDiv.innerHTML = "";
+            //gameBoardDiv.innerHTML = "";
+            let str="";
             for (let i = 0; i < this.rows; i++) {
                 let row = [];
                 this.cells.push(row);
                 for (let j = 0; j < this.cols; j++) {
                     let cell = new Cell(i, j);
                     row.push(cell);
-                    gameBoardDiv.innerHTML += cell.getHtml();
+                    str += cell.getHtml();
+                    //alert(str);
                 }
             }
+
+            gameBoardDiv.innerHTML=str;
         }
 
         play(x, y) {
@@ -121,7 +133,7 @@
                 count++;
                 i++;
             }
-            this.endGame(count);
+            this.endGame(count,cell.value);
             //Vertical
             count = 1;
              i = 1;
@@ -134,7 +146,7 @@
                 count++;
                 i++;
             }
-            this.endGame(count);
+            this.endGame(count,cell.value);
             //Left diagonal
              count = 1;
              i = 1;
@@ -151,7 +163,7 @@
                 i++;
                 j++;
             }
-            this.endGame(count);
+            this.endGame(count,cell.value);
             //Right diagonal
              count = 1;
              i = 1;
@@ -168,13 +180,13 @@
                 i++;
                 j++;
             }
-            this.endGame(count);
+            this.endGame(count,cell.value);
         }
 
-        endGame (count) {
+        endGame (count,vl) {
             if (count >= 5) {
                 this.isOver = true;
-                alert("You won!!!");
+                alert(vl+" won!!!");
             }
         }
     }
@@ -184,7 +196,7 @@
     }
 
     function start() {
-        gameBoard = new GameBoard(DEFAULT_ROWS, DEFAULT_COLS, "game-board");
+        gameBoard = new GameBoard(DEFAULT_ROWS, DEFAULT_COLS, "game");
         gameBoard.draw();
     }
 

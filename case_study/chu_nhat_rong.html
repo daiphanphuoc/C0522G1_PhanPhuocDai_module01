@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let height =parseInt(prompt("chiều dài hình chữ nhật:"));
+    let wight=parseInt(prompt("chiều rộng hình chữ nhật:"));
+    let result="<table >";
+    let j;
+    for(let i=1;i<=height;i++){
+        result+="<tr>";
+        for (j=1;j<=wight;j++){
+            if(i==1 || j==1 || i==height || j==wight){
+                result=result +"<td>*</td>";
+            }else{
+                result=result +"<td></td>";
+            }
+        }
+        result=result+"</tr>"
+    }
+    result+="</table>"
+    document.write(result)
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.*/
+    let dong=parseInt(prompt("nhập vào số dòng của ma trận:"));
+    let cot=parseInt(prompt("nhập vào số cột của ma trận: "));
+    let arrNumber=[];
+    createArrayNumbers(arrNumber,dong,cot);
+    displayArr2D(arrNumber);
+    let sumEven=tongChan(arrNumber);
+    document.write("tổng các số chẵn trong ma trận: "+sumEven);
+
+
+
+
+    function createArrayNumbers(arr,m,n){
+        for (let i=0;i<m;i++){
+            let temp=[];
+            for(let j=0; j<n;j++){
+                temp[j]=parseInt(prompt("nhập vào phần tử thứ \["+i+"\]\["+j+"\]: "));
+            }
+            arr[i]=temp;
+        }
+    }
+    function displayArr2D(arr) {
+        for( let i=0; i<arr.length;i++){
+            for (let j=0;j<arr[i].length;j++){
+                document.write(arr[i][j]+"  ");
+            }
+            document.write("<br>");
+        }
+    }
+    function tongChan(arr) {
+        let total=0;
+        for( let i=0; i<arr.length;i++){
+            for (let j=0;j<arr[i].length;j++){
+                if(arr[i][j]%2===0){
+                    alert(arr[i][j]);
+                    total+=arr[i][j];
+                }
+            }
+        }
+        return total;
+    }
+</script>
+</body>
+</html>

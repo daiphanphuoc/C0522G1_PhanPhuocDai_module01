@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let arrNumber2D=[];
+    let rowArr=parseInt(prompt("nhâp vào số dòng của mảng 2 chiều: "));
+    let colArr=parseInt(prompt("nhâp vào số cột của mảng 2 chiều: "));
+    createArrayNumbers2D(arrNumber2D,rowArr,colArr);
+    displayArr2D(arrNumber2D);
+    let min =minArr2d(arrNumber2D);
+    let max =maxArr2d(arrNumber2D);
+    document.write("max="+max+" và min="+min);
+
+
+
+
+
+    function createArrayNumbers2D(arr,m,n){
+        for (let i=0;i<m;i++){
+            let temp=[];
+            for(let j=0; j<n;j++){
+                temp[j]=parseInt(prompt("nhập vào phần tử thứ \["+i+"\]\["+j+"\]: "));
+            }
+            arr[i]=temp;
+        }
+    }
+    function displayArr2D(arr) {
+        for( let i=0; i<arr.length;i++){
+            for (let j=0;j<arr[i].length;j++){
+                document.write(arr[i][j]+"  ");
+            }
+            document.write("<br>");
+        }
+    }
+    function maxArr2d(arr) {
+        let max=arr[0][0];
+        for (let i=0; i<arr.length;i++){
+            for (let j=0; j<arr[i].length;j++){
+                if(max<arr[i][j]){
+                    max=arr[i][j];
+                }
+            }
+        }
+        return max;
+    }
+    function minArr2d(arr) {
+        let min=arr[0][0];
+        for (let i=0; i<arr.length;i++){
+            for (let j=0; j<arr[i].length;j++){
+                if(min>arr[i][j]){
+                    min=arr[i][j];
+                }
+            }
+        }
+        return min;
+    }
+</script>
+</body>
+</html>

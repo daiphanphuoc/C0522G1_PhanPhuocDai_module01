@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số ký tự khác nhau</title>
+</head>
+<body>
+<!--: Cho xâu kí tự. Hãy đếm số lượng kí tự khác nhau trong xâu đó
+Ví dụ: s = "cabca", thì kết quả differentSymbolsNaive(s) = 3.
+⇨	Có 3 kí tự khác nhau là a, b và c.
+-->
+<script>
+    let str=prompt("nhập vào một chuỗi: ");
+    let strDifferent=differentSymbolsNaive(str);
+    alert("chuỗi ban đầu: "+str+". Số ký tự khác nhau của chuỗi: "+strDifferent.length);
+    function differentSymbolsNaive(str){
+        let strTemp="";
+        for(let i=0;i<str.length;i++){
+            let j=0;
+            for(;j<strTemp.length;j++){
+                if(str[i]===strTemp[j]){
+                    break;
+                }
+            }
+            if(j===strTemp.length){
+                strTemp+=str[i];
+            }
+        }
+        return strTemp;
+    }
+
+</script>
+</body>
+</html>

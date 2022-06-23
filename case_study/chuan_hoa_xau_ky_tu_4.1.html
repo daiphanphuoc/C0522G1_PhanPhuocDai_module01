@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function chuanHoa(str) {
+        str=str.toLowerCase();
+        str=str.trim();
+        //alert(str);
+        let newStr="";
+        newStr+=str[0].toUpperCase();
+        for(let i=1;i<str.length;i++){
+            if(str[i]===" "&& str[i+1]==" "){
+
+            }else if(str[i-1]===" "){
+                newStr+=str[i].toUpperCase();
+            }
+            else{
+                newStr+=str[i];
+            }
+        }
+        return newStr;
+    }
+    function tuDaiNhat(str){
+        let temp="";
+        let arr=[];
+        for(let i=0; i<str.length;i++){
+            if(str[i]!==" "){
+                temp=temp+str[i];
+            }
+            if(str[i]===" "){
+                arr.push(temp);
+                temp="";
+            }
+        }
+        let indexMax=0;
+        for(let i=1;i<arr.length;i++){
+            if(arr[i].length>arr[indexMax].length){
+                indexMax=i;
+            }
+        }
+        return arr[indexMax];
+    }
+    alert(chuanHoa("pHan PhUoc     dai"));
+    let tu=tuDaiNhat("pHan PhUoc     dai");
+    alert(tu);
+</script>
+</body>
+</html>
