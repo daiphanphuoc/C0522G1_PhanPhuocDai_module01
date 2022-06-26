@@ -23,18 +23,18 @@
                 i++;
                 let j = i;
                 while (checkArrNumber(arrA, arrB[j]) === false && arrB[j] >= arrB[j - 1]) {
-                    if (arrB[j] > arrB[j - 1]) {
+                   // if (arrB[j] > arrB[j - 1]) {
                         subarr.push(arrB[j]);
-                    }
+                   // }
                     j++;
                 }
                 if (subarr.length > 1) {
                     return subarr;
                 }
                 while (checkArrNumber(arrA, arrB[j]) === false && arrB[j] <= arrB[j - 1]) {
-                    if (arrB[j] < arrB[j - 1]) {
+                    //if (arrB[j] < arrB[j - 1]) {
                         subarr.push(arrB[j]);
-                    }
+                    //}
                     j++;
                 }
                 if (subarr.length > 1) {

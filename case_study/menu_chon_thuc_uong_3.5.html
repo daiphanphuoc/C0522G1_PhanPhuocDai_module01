@@ -15,18 +15,20 @@ Sử dụng vòng lặp do while lặp lại cho người dùng đặt thức u�
 <script>
 let arrMenu=["cafe","cam vắt","nước ép cà rốt","nước ép cà chua","nước lọc","nước dừa"]  ;
 let arrUnitPrice=[5,10,8,8,3,9];
-let str="bảng mennu chọn thức uống:";
+let str="bảng mennu chọn thức uống:\n";
 for(let i=0;i<arrMenu.length;i++){
-    str+=(i+1)+" : "+arrMenu[i]+" đơn giá: "+arrUnitPrice[i]+" /" ;
+    str+=(i+1)+". "+arrMenu[i]+" đơn giá: "+arrUnitPrice[i]+" \n" ;
 }
-str+=(arrMenu.length+1)+" : thoát ";
+str+=(arrMenu.length+1)+" : thoát \n";
 let choose;
 let sl=0;
+let total=0;
 do {
     choose=parseInt(prompt(str+" mời bạn chọn món:"));
     if(choose>0&&choose<7){
         alert("bạn đã chọn món "+arrMenu[choose-1]);
         sl=parseInt(prompt("mời bạn nhập số lượng:"));
+        total=total+sl*arrUnitPrice[choose-1];
         alert("số tiền bạn phải trả cho lần chọn món này : "  + sl*arrUnitPrice[choose-1]);
 
      }
@@ -37,7 +39,7 @@ do {
         alert("bạn dừng chọn món");
     }
 }while (choose!=7);
-
+alert("tổng tiền phải trả: "+total);
 </script>
 </body>
 </html>

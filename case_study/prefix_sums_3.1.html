@@ -14,23 +14,25 @@ Xây dựng mảng b là prefix sums của mảng a cụ thể theo công thức
   b[n - 1] = a[0] + a[1] + ... + a[n - 1]
 -->
 <script>
-    let arrNumbers=[];
+    let arrNumbers = [];
     createArr(arrNumbers);
-    let prefix= prefixSums(arrNumbers);
-    document.write(prefix);
-
+    document.write("<br>Mảng ban đầu: " + arrNumbers.join(" "));
+    let prefix = prefixSums(arrNumbers);
+    document.write("<br>Mảng prefix: " + prefix.join(" "));
     function createArr(arr) {
-        let length=parseInt(prompt("nhập vào chiều dài của mảng: "));
-        for(let i=0;i<length;i++){
-            arr[i]=parseInt(prompt("nhập vào phần tử thứ "+i));
+        let length = parseInt(prompt("nhập vào chiều dài của mảng: "));
+        for (let i = 0; i < length; i++) {
+            arr[i] = parseInt(prompt("nhập vào phần tử thứ " + i));
         }
     }
+
     function prefixSums(arr) {
-        let prefix=[];
-        let sum=0;
-        for(let i=0, length=arr.length;i<length;i++){
-            sum+=arr[i];
-            prefix[i]=sum;
+        let prefix = [];
+        let sum = 0;
+        let length = arr.length;
+        for (let i = 0 ; i < length; i++) {
+            sum += arr[i];
+            prefix[i] = sum;
         }
         return prefix;
     }
