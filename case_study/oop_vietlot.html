@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-    class VietLot {
+    class Vietlot {
         arrNumber;
         prize;
 
@@ -26,7 +26,7 @@
             this.prize = prize;
         }
 
-        getPrize(prize) {
+        getPrize() {
             return this.prize;
         }
 
@@ -91,48 +91,44 @@
             //let prize = "";
             for (let i = 0; i < this.vietlot.length; i++) {
 
-               // if (this.vietlot[i].getStatus()) {
-                    let j ;
+                if (this.vietlot[i].getStatus()) {
+                    let j;
                     for (j = 5; j >= 0; j--) {
-                        alert(this.vietlot[i].getStrNumber()[j] );
                         if (this.vietlot[i].getStrNumber()[j] != win[j]) {
                             break;
                         }
-
                     }
-                if (j >= 3) {
-                    alert(this.vietlot[i].getStrNumber()[j] );
-                    this.vietlot[i].setPrize(0);
-                    this.vietlot[i].setStatus();
-                } else if (j >= 1) {
-                    this.vietlot[i].setPrize(3);
-                    this.vietlot[i].setStatus();
-                } else if (j >= 0) {
-                    this.vietlot[i].setPrize(2);
-                    this.vietlot[i].setStatus();
-                } else {
-                    this.vietlot[i].setPrize(1);
-                    this.vietlot[i].setStatus();
+                    if (j >= 3) {
+                        this.vietlot[i].setPrize(0);
+                        this.vietlot[i].setStatus();
+                    } else if (j >= 1) {
+                        this.vietlot[i].setPrize(3);
+                        this.vietlot[i].setStatus();
+                    } else if (j >= 0) {
+                        this.vietlot[i].setPrize(2);
+                        this.vietlot[i].setStatus();
+                    } else {
+                        this.vietlot[i].setPrize(1);
+                        this.vietlot[i].setStatus();
+                    }
                 }
-                }
-
             }
-       // }
+        }
     }
 
     let client = new Client("Đại");
     let index = 0;//bắt đầu mua vé
     do {
-        let choose = parseInt(prompt("1.Mua bằng cách random số.\nMua bằng cách tự chọn số."));
+        let choose = parseInt(prompt("1.Mua bằng cách random số.\n2.Mua bằng cách tự chọn số."));
         switch (choose) {
             case 1:
-                let vietlot = new VietLot();
+                let vietlot = new Vietlot();
                 vietlot.randomNumber();
                 client.setVietlot(vietlot);
                 index++;
                 break;
             case 2:
-                let vietlot2 = new VietLot();
+                let vietlot2 = new Vietlot();
                 vietlot2.chooseNumber();
                 client.setVietlot(vietlot2);
                 index++;
@@ -158,7 +154,7 @@
     for (let i = 0; i < arr.length; i++) {
         document.write(arr[i].getStrNumber().join(" ") + " " + arr[i].getStatus() + "<br>");
     }
-    let winningNumbers2 = [23,23,23,23,23,23];
+    let winningNumbers2 = [23, 23, 23, 23, 23, 23];//dãy số trúng thưởng mặc định
     //xổ số
     client.lottery(winningNumbers2);
     arr = client.getVietlot();
@@ -166,18 +162,24 @@
         document.write(arr[i].getStrNumber().join(" ") + " " + arr[i].getStatus() + " giải:" + arr[i].getPrize() + "<br>");
     }
 
-    let bonus=0;
-    for (let i=0;i<arr.length;i++){
-        if(arr[i].getPrize()===1){
-            bonus=bonus+3000000000;
-        }else if(arr[i].getPrize()===2){
-            bonus=bonus+30000000;
-        }else if(arr[i].getPrize()===3){
-            bonus=bonus+300000;
+    let bonus = 0;// tính tiền thưởng
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].getPrize() === 1) {
+            bonus = bonus + 3000000000;
+        } else if (arr[i].getPrize() === 2) {
+            bonus = bonus + 30000000;
+        } else if (arr[i].getPrize() === 3) {
+            bonus = bonus + 300000;
         }
 
     }
-    document.write("tổng tiền thưởng: "+bonus);
+    if (bonus === 0) {
+        alert("chúc bạn may mắn lần sau");
+    } else {
+        document.write("tổng tiền thưởng của "+ client.getName()+" là : " + bonus);
+    }
+
+
 </script>
 </body>
 </html>

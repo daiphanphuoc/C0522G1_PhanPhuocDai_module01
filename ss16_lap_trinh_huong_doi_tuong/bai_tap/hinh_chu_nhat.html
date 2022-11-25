@@ -5,7 +5,9 @@
     <title>Hình chữ nhật</title>
 </head>
 <body>
+<label>aaaaaaaaaaaaaaaaaa</label>
 <canvas id="DemoCanvas" width="1000px" height="2000px" ></canvas>
+<canvas id="DemoCanvas1" width="1000px" height="2000px" ></canvas>
 <script>
     /*Viết một lớp các đối tượng hình chữ nhật lấy tên là Rectangle, mỗi hình chữ nhật đều có những đặc tính sau:
 + Có thông số chiều dài (int).
@@ -59,15 +61,15 @@ In ra màn hình diện tích và chu vi của hình chữ nhật đó.*/
     let rectangle = new Rectangle(4, 3);
     let area = rectangle.getArea();
     let perimeter = rectangle.getPerimeter();
-    alert("chiều dài: " + rectangle.getLongs() + " chiều rộng: " + rectangle.getWidths()
+    /*alert("chiều dài: " + rectangle.getLongs() + " chiều rộng: " + rectangle.getWidths()
         + "có diện tích: " + area + " và chu vi: " + perimeter);
-    rectangle.setLongs(600);
+   */ rectangle.setLongs(6);
     rectangle.setWidths(200);
     area = rectangle.getArea();
     perimeter = rectangle.getPerimeter();
-    alert("chiều dài: " + rectangle.getLongs() + " chiều rộng: " + rectangle.getWidths()
+   /* alert("chiều dài: " + rectangle.getLongs() + " chiều rộng: " + rectangle.getWidths()
         + "có diện tích: " + area + " và chu vi: " + perimeter);
-
+*/
     let canvas = document.getElementById("DemoCanvas");
     let ctx = canvas.getContext('2d');
     ctx.fillStyle='blue';

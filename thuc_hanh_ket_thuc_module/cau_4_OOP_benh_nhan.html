@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách bệnh nhân</title>
+</head>
+<body>
+<h2 align="center">Danh sách bệnh nhân</h2>
+<p id="display"></p>
+<script>
+
+    class BenhNhan {
+        constructor(stt, hoTen, tuoi, diaChi, soDienThoai) {
+            this._soThuTu = stt;
+            this._hoTen = hoTen;
+            this._tuoi = tuoi;
+            this._diaChi = diaChi;
+            this._soDienThoai = soDienThoai;
+        }
+
+        getSoThuTu() {
+            return this._soThuTu;
+        }
+
+        getHoTen() {
+            return this._hoTen;
+        }
+
+        getTuoi() {
+            return this._tuoi;
+        }
+
+        getDiaChi() {
+            return this._diaChi;
+        }
+
+        getSoDienThoai() {
+            return this._soDienThoai;
+        }
+
+        setSoThuTu(soThuTu) {
+            this._soThuTu = soThuTu;
+        }
+
+        setHoTen(hoTen) {
+            this._hoTen = hoTen;
+        }
+
+        setTuoi(tuoi) {
+            this._tuoi = tuoi;
+        }
+
+        setDiaChi(diaChi) {
+            this._diaChi = diaChi;
+        }
+
+        setSoDienThoai(soDienThoai) {
+            this._soDienThoai = soDienThoai;
+        }
+    }
+
+
+    let benhNhanQuyen = new BenhNhan(1, "Trần Lệ Quyên", 77, "Đà Nẵng", "0972377772");
+    let benhNhanCanh = new BenhNhan(2, "Nguyễn Trần Cảnh", 27, "Quảng Nam", "0979995672");
+    let benhNhanHung = new BenhNhan(3, "Hoàng Thanh Hùng", 52, "Quảng Nam", "0972345555");
+    let benhNhanAnh = new BenhNhan(4, "Nguyễn Lê Hoàng Anh", 22, "Quảng Nam", "0972345672");
+
+    let arrBenhNhan = [benhNhanQuyen, benhNhanCanh, benhNhanHung, benhNhanAnh];
+
+    arrBenhNhan=arrBenhNhan.sort(function (a,b) {
+        let tenA=a.getHoTen().toLowerCase().trim().split(" ");
+        let tenB=b.getHoTen().toLowerCase().trim().split(" ");
+
+        if(tenA[tenA.length-1]<tenB[tenB.length-1]){
+            return -1;
+        }
+        else if(tenA[tenA.length-1]>tenB[tenB.length-1]){
+            return 1;
+        }else{
+            return 0;
+        }
+    });
+    display(arrBenhNhan);
+
+    function display(array) {
+        let sout = "<table border=\"1px\" align='center'>\n" +
+            "    <tr>\n" +
+            "        <th>STT</th>\n" +
+            "        <th>Họ và tên </th>\n" +
+            "        <th>Tuổi</th>\n" +
+            "        <th>Địa chỉ</th>\n" +
+            "        <th>Số điện thoại</th>\n" +
+            "    </tr>";
+        for (let i = 0; i < array.length; i++) {
+            sout += "<tr>" +
+                "<td>" + array[i].getSoThuTu() + "</td>" +
+                "<td>" + array[i].getHoTen() + "</td>" +
+                "<td>" + array[i].getTuoi() + "</td>" +
+                "<td>" + array[i].getDiaChi() + "</td>" +
+                "<td>" + array[i].getSoDienThoai() + "</td>" +
+                "</tr>"
+        }
+        sout += "</table>";
+        document.getElementById("display").innerHTML = sout;
+    }
+</script>
+</body>
+</html>

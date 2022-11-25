@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNumber = [];
+    let n
+    do {
+        n = prompt("nhập vào chiều dài của mảng: ");
+    } while (n % n !== 0 || n < 1);
+    n = parseInt(n);
+    creatArr(arrNumber, n);
+    document.write("mảng vừa nhập: " + arrNumber.join(" ") + "<br>");
+    let minMax = indexMinMax(arrNumber);
+    document.write(minMax.join(" "));
+
+    function creatArr(arr, length) {
+        let temp;
+        for (let i = 0; i < length; i++) {
+            do {
+                temp = prompt("nhập vào phần tử thứ " + (i + 1) + " của mảng: ");
+            } while (temp % temp !== 0);
+            arr[i] = temp;
+        }
+    }
+
+    function indexMinMax(arr) {
+        let indexMin = 0;
+        let indexMax = 0;
+        let arrIndex = [];
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[indexMin] > arr[i]) {
+                indexMin = i;
+            }
+            if (arr[indexMax] < arr[i]) {
+                indexMax = i;
+            }
+        }
+        arrIndex.push(indexMin);
+        arrIndex.push(indexMax);
+        return arrIndex;
+    }
+</script>
+</body>
+</html>

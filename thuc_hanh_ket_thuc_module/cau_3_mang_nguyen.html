@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNumber = [];
+    let longs;
+
+    do {
+        longs = prompt("nhập vào chiều dài của mảng: ");
+    } while (longs % longs !== 0 || longs < 1);
+    longs = parseInt(longs);
+    creatArr(arrNumber, longs);
+    document.write("mảng vừa nhập: " + arrNumber.join(" ") + "<br>");
+
+    let numberN;
+    do {
+        numberN = prompt("nhập vào số nguyên N: ");
+    } while (numberN % numberN !== 0 || numberN < 1);
+    numberN = parseInt(numberN);
+    let result = mangSo(arrNumber, numberN);
+    document.write("kết quả: " + result.join(" ") + "<br>");
+
+
+    function creatArr(arr, length) {
+        let temp;
+        for (let i = 0; i < length; i++) {
+            do {
+                temp = prompt("nhập vào phần tử thứ " + (i + 1) + " của mảng: ");
+            } while (temp % temp !== 0);
+            arr[i] = parseInt(temp);
+        }
+    }
+
+    function mangSo(arr, n) {
+        let mang = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % n === 0) {
+                if (mang.indexOf(arr[i]) === -1) {
+                    mang.push(arr[i]);
+                }
+            }
+        }
+        return mang;
+    }
+</script>
+</body>
+</html>

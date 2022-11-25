@@ -63,7 +63,7 @@ function start() {
     }
     //hero.moveRandom();
     document.getElementById('game').innerHTML = hero.getHeroElement();
-    setTimeout(start, 1)
+    setTimeout(start, 1000)
 }
 
 start();
